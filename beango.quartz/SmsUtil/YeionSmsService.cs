@@ -21,16 +21,16 @@ namespace beango.quartz
             RequestData param = state as RequestData;
             try
             {
-                List<MessageLog> msgList = param.msgList;
+                List<dynamic> msgList = param.msgList;
                 if (msgList == null || msgList.Count == 0)
                     return;
                 #region 组装需要发送的消息
-            
+
                 string msgContent = "JsonHelper.ObjDivertToJson(md)";
 
                 #endregion
 
-                string url = "http://localhost:8001/Handler/beango.test.ashx";
+                string url = "http://localhost:8001/Handler/test.ashx";
                 StringBuilder _summary = new StringBuilder();
                 _summary.AppendFormat("短信发送【{0}】；", url);
 
@@ -64,10 +64,10 @@ namespace beango.quartz
         {
             try
             {
-                var dictResult =resultData.result.Trim();
+                var dictResult = resultData.result.Trim();
                 resultData.summary.Append("【处理结果】：" + resultData.result.Trim());
 
-                string msid = @resultData.msgList.Aggregate("", (current, yeionItem) => current + (yeionItem.id.ToString() + "#"));
+                string msid = @resultData.msgList.Aggregate("", (current, yeionItem) => current + (yeionItem.id.ToString() + ","));
                 if (!string.IsNullOrEmpty(msid))
                 {
                     msid = msid.Substring(0, msid.Length - 1);
@@ -76,7 +76,7 @@ namespace beango.quartz
             }
             catch (Exception ex)
             {
-                beango.util.LogHelper.Error(ex);
+                LogHelper.Error(ex);
             }
             finally
             {

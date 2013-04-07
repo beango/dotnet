@@ -24,7 +24,7 @@
 
 
 
-    const string Namespace = "com.YiF1.Model";
+    const string Namespace = "beango.model";
     const string ConnectionStringName = "DBConn";
 	
     
@@ -50,10 +50,9 @@
 	
     };
 	string[] IncludeTables = new string[]{
-    "importFileHis",
-	 "importCustomerCapitalCount",
-	  "importCustomerDetail",
-	   "importTransactionDetail",
+		"Categories","Contacts","CustomerCustomerDemo","CustomerDemographics","Customers",
+		"Employees","EmployeeTerritories","Order Details","Orders","Products","Region",
+		"Shippers","Suppliers","Territories","MessageLog"
     };
 
     string CleanUp(string tableName){

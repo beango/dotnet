@@ -115,7 +115,7 @@ List<Table> LoadTables(){
         while(rdr.Read()){
             Table tbl=new Table();
             tbl.Name=rdr["TABLE_NAME"].ToString();
-			if(!IncludeTables.Contains(tbl.Name))
+			if(IncludeTables.Length>0 && !IncludeTables.Contains(tbl.Name))
 				continue;
             tbl.Schema=rdr["TABLE_SCHEMA"].ToString();
             tbl.Columns=LoadColumns(tbl);

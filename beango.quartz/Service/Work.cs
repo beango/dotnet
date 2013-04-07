@@ -23,14 +23,12 @@ namespace beango.quartz
         }
         public void Execute(IJobExecutionContext context)
         {
-            sqlhelper helper = new sqlhelper();
-
             bool lockTaken = false;
             Monitor.TryEnter(syncRoot, 500, ref lockTaken);
             try
             {
-                List<MessageLog> smss =
-                new Database("DBConn").Fetch<MessageLog>("select * from messagelog where SendFlag=0 and ErrNum<3 order by id asc");
+                List<dynamic> smss = new MessageLogDAL().GetMessageLogList();
+                
                 if (null != smss && smss.Count > 0 && lockTaken)
                 {
                     SendSms(smss);
@@ -45,7 +43,7 @@ namespace beango.quartz
             }
         }
 
-        public static void SendSms(List<MessageLog> msgList)
+        public static void SendSms(List<dynamic> msgList)
         {
             var countdown = new MutipleThreadResetEvent();
             try

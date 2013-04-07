@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Text;
-using beango.model;
 using beango.util;
 
 namespace beango.quartz
@@ -13,7 +12,7 @@ namespace beango.quartz
 
         public byte[] msgBytes { get; set; }
 
-        public List<MessageLog> msgList { get; set; }
+        public List<dynamic> msgList { get; set; }
 
         public StringBuilder summary { get; set; }
 

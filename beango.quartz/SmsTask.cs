@@ -42,14 +42,14 @@ namespace beango.quartz
         {
             try
             {
-                beango.util.LogHelper.Debug("短信定时任务启动。");
+                util.LogHelper.Debug("短信定时任务启动。");
                 _schedFactory = new StdSchedulerFactory();
                 sched = _schedFactory.GetScheduler();
                 sched.Start();
             }
             catch (Exception ex)
             {
-                beango.util.LogHelper.Error(ex);
+                util.LogHelper.Error(ex);
             }
         }
 

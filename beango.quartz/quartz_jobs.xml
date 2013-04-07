@@ -9,7 +9,7 @@
             <name>SmsSendServiceJob</name>
             <group>SmsSendServiceGroup</group>
             <description>短信定时发送任务</description>
-            <job-type>com.YiF1.Quartz.SmsIntervalSendWork, com.YiF1.Quartz</job-type>
+            <job-type>beango.quartz.SmsIntervalSendWork, beango.quartz</job-type>
             <durable>true</durable>
             <recover>false</recover>
         </job>

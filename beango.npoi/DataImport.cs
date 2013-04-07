@@ -43,7 +43,6 @@ namespace beango.npoi
                 openFileDialog1.RestoreDirectory = true;
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                     resultFile = openFileDialog1.FileName;
-                //file = beango.util.UpLoadFile(resultFile, "fileupload/", true, label1);
                 file = resultFile;
                 if (file != "")
                 {
@@ -73,7 +72,7 @@ namespace beango.npoi
                 if (fileNameExt == "xlsx")
                     ConvertToDataTable_xlsx();
                 else// (fileNameExt == "xls")
-                    ConvertToDataTable_xls();
+                    ConvertToDataTable_xls(7);
                 
                 CheckCanSubmit();
             }
@@ -112,7 +111,7 @@ namespace beango.npoi
             }
         }
 
-        void ConvertToDataTable_xls()
+        void ConvertToDataTable_xls(int skip = 0)
         {
             ISheet sheet = workbook.GetSheetAt(0);
             System.Collections.IEnumerator rows = sheet.GetRowEnumerator();
@@ -123,6 +122,10 @@ namespace beango.npoi
             int cols = 0;
             while (rows.MoveNext())
             {
+                if (skip-- > 0)
+                {
+                    continue;
+                }
                 IRow row = (HSSFRow)rows.Current;
                 if (rowindex == 0)
                 {
