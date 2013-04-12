@@ -50,9 +50,6 @@
 	
     };
 	string[] IncludeTables = new string[]{
-		"Categories","Contacts","CustomerCustomerDemo","CustomerDemographics","Customers",
-		"Employees","EmployeeTerritories","Order Details","Orders","Products","Region",
-		"Shippers","Suppliers","Territories","MessageLog"
     };
 
     string CleanUp(string tableName){

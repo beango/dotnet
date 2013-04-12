@@ -5,46 +5,47 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Collections;
+using System.ComponentModel.DataAnnotations;
 
 namespace beango.model
 {
     /// <summary>
     /// A class which represents the Contacts table in the Northwind Database.
     /// </summary>
-    public partial class Contact
+    public partial class Contacts
     {
 		#region Column Mappings
-
+		[Key]
 		public int ContactID{get;set;}
-
+		
 		public string ContactType{get;set;}
-
+		
 		public string CompanyName{get;set;}
-
+		
 		public string ContactName{get;set;}
-
+		
 		public string ContactTitle{get;set;}
-
+		
 		public string Address{get;set;}
-
+		
 		public string City{get;set;}
-
+		
 		public string Region{get;set;}
-
+		
 		public string PostalCode{get;set;}
-
+		
 		public string Country{get;set;}
-
+		
 		public string Phone{get;set;}
-
+		
 		public string Extension{get;set;}
-
+		
 		public string Fax{get;set;}
-
+		
 		public string HomePage{get;set;}
-
+		
 		public string PhotoPath{get;set;}
-
+		
 		public byte[] Photo{get;set;}
 
 		#endregion

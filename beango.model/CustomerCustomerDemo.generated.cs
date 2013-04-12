@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Collections;
+using System.ComponentModel.DataAnnotations;
 
 namespace beango.model
 {
@@ -14,9 +15,9 @@ namespace beango.model
     public partial class CustomerCustomerDemo
     {
 		#region Column Mappings
-
+		
 		public string CustomerID{get;set;}
-
+		
 		public string CustomerTypeID{get;set;}
 
 		#endregion
