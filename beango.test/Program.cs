@@ -15,7 +15,7 @@ namespace beango.test
         {
             db = new Database("ResourceSystem");
 
-            var posts = db.Fetch<MessageLog>("SELECT * FROM MessageLog");
+            var posts = db.Fetch<Products>("SELECT * FROM Products");
 
             Console.WriteLine(posts.Count);
         }

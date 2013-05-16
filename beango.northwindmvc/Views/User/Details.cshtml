@@ -1,0 +1,22 @@
+﻿@model beango.model.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 style="float: left;">Details UserInfo</h2>
+<p style="position: relative; height: 36px;">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserID }, new { style = "position:absolute; margin-left:10px; bottom:6px;" })<span style = "position:absolute; margin-left:40px; bottom:6px;"> |</span>
+    @Html.ActionLink("Back to List", "Index",null, new { style = "position:absolute; margin-left:50px; bottom:6px;" })
+</p>
+<dl class="dl-horizontal">
+    <dt>UserName</dt>
+    <dd>
+        @Html.DisplayFor(model => model.UserName)
+    </dd>
+    <dt>UserPwd</dt>
+    <dd>
+        @Html.DisplayFor(model => model.UserPwd)
+    </dd>
+</dl>
+

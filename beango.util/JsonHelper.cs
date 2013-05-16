@@ -1,3 +1,6 @@
+using System;
+using System.IO;
+using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Data;
 using System.Web.Script.Serialization;
@@ -6,18 +9,26 @@ namespace beango.util
 {
     public class JsonHelper
     {
-        public static T JsonDivertToObj<T>(string json)
+        public static T JsonDeserializa<T>(string strjson)
         {
-            JavaScriptSerializer script = new JavaScriptSerializer();
-            T dic = script.Deserialize<T>(json);
-            return dic;
+            DataContractJsonSerializer zer = new DataContractJsonSerializer(typeof(T));
+            if (strjson != null)
+            {
+                MemoryStream ms = new MemoryStream(Encoding.UTF8.GetBytes(strjson));
+                T obj = (T)zer.ReadObject(ms);
+                return obj;
+            }
+            return default(T);
         }
 
-        public static string ObjDivertToJson(object obj)
+        public static string JsonSerializa<T>(T t)
         {
-            JavaScriptSerializer script = new JavaScriptSerializer();
-            string json = script.Serialize(obj);
-            return json;
+            DataContractJsonSerializer zer = new DataContractJsonSerializer(typeof(T));
+            MemoryStream ms = new MemoryStream();
+            zer.WriteObject(ms, t);
+            string jsonstring = Encoding.UTF8.GetString(ms.ToArray());
+            ms.Close();
+            return jsonstring;
         }
 
         public static string DataTabDrivertJson(DataTable dt)

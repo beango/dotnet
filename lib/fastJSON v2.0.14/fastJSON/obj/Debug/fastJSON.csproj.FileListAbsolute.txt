@@ -1,0 +1,5 @@
+F:\project\dotnet\lib\fastJSON v2.0.14\fastJSON\bin\Debug\fastJSON.dll
+F:\project\dotnet\lib\fastJSON v2.0.14\fastJSON\bin\Debug\fastJSON.pdb
+F:\project\dotnet\lib\fastJSON v2.0.14\fastJSON\obj\Debug\ResolveAssemblyReference.cache
+F:\project\dotnet\lib\fastJSON v2.0.14\fastJSON\obj\Debug\fastJSON.dll
+F:\project\dotnet\lib\fastJSON v2.0.14\fastJSON\obj\Debug\fastJSON.pdb

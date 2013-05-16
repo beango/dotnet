@@ -1,0 +1,32 @@
+﻿@model IEnumerable<beango.model.Auth>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2 style="float: left;">List</h2>
+<p style="position: relative; height: 36px;">
+    @Html.ActionLink("Create New", "Create", null, new { style = "position:absolute; margin-left:10px; bottom:6px;" })
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            AuthName
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuthName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AuthID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AuthID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AuthID })
+        </td>
+    </tr>
+}
+
+</table>

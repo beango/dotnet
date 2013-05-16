@@ -1,0 +1,47 @@
+﻿@model beango.model.Roles
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2 style="float:left;">Edit Roles</h2>
+<p style="position: relative; height: 36px;">
+    @Html.ActionLink("Back to List", "List", null, new { style = "position:absolute; margin-left:10px; bottom:6px;" })
+</p>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.form.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    // wait for the DOM to be loaded
+    $(document).ready(function () {
+        var ajaxProjectImageListOptions = {
+            dataType: 'json',
+            success: function (result) {
+                alert(result.Text);
+                location.href = "/Role/List";
+            }
+        };
+        $('form').ajaxForm(ajaxProjectImageListOptions);
+    }); 
+</script>
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+        @Html.HiddenFor(model => model.RoleId)
+
+<div class="control-group">
+        <div class="control-label">
+            @Html.LabelFor(model => model.RoleName)
+        </div>
+        <div class="controls">
+            @Html.EditorFor(model => model.RoleName)
+            @Html.ValidationMessageFor(model => model.RoleName)
+        </div>
+</div>
+        <div class="form-actions">
+			<button type="submit" class="btn btn-primary">
+				保存更改</button>
+			<button class="btn" onclick="location.href='/';return false;">
+				取消</button>
+		</div>
+}

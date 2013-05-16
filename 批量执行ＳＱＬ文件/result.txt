@@ -1,0 +1,26 @@
+1.CREATE_DB.sql 
+开始创建TestDB数据库
+创建完毕
+
+2.CREATE_TABLES.sql 
+正在创建数据表 
+已将数据库上下文更改为 'TestDB'。
+
+3.CREATE_INDEXES.sql 
+开始创建索引
+已将数据库上下文更改为 'TestDB'。
+
+4.CREATE_PROCEDURES.sql 
+正在创建存储过程
+已将数据库上下文更改为 'TestDB'。
+
+5.TABLE_INSERTS.sql 
+正在插入数据到表 EMPLOYEE
+已将数据库上下文更改为 'TestDB'。
+
+(1 行受影响)
+
+(1 行受影响)
+
+(1 行受影响)
+

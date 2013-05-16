@@ -1,0 +1,18 @@
+/* SCRIPT: CREATE_DB.sql */
+/* 创建TestDB数据库 */
+
+-- This is the main caller for each script
+SET NOCOUNT ON
+GO
+
+PRINT '开始创建TestDB数据库'
+
+IF EXISTS (SELECT 1 FROM SYS.DATABASES WHERE NAME = 'TestDB')
+--将数据库设置为单用户模式.并马上中断其它用户连接
+ALTER DATABASE TestDB SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+DROP DATABASE TestDB
+GO
+CREATE DATABASE TestDB
+GO
+PRINT '创建完毕'
+GO
