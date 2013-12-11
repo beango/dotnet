@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using beango.dal;
-using beango.model;
 using beango.util;
 
 namespace beango.quartz
@@ -21,16 +20,20 @@ namespace beango.quartz
             RequestData param = state as RequestData;
             try
             {
-                List<dynamic> msgList = param.msgList;
-                if (msgList == null || msgList.Count == 0)
-                    return;
+                if (param != null)
+                {
+                    List<dynamic> msgList = param.msgList;
+                    if (msgList == null || msgList.Count == 0)
+                        return;
+                }
+
                 #region 组装需要发送的消息
 
-                string msgContent = "JsonHelper.ObjDivertToJson(md)";
+                const string msgContent = "JsonHelper.ObjDivertToJson(md)";
 
                 #endregion
 
-                string url = "http://localhost:8001/Handler/test.ashx";
+                const string url = "http://localhost:8001/Handler/test.ashx";
                 StringBuilder _summary = new StringBuilder();
                 _summary.AppendFormat("短信发送【{0}】；", url);
 
@@ -41,16 +44,17 @@ namespace beango.quartz
                 parameters.Add("Exno", "0");
 
 
-                param.summary = _summary;
-                param.onComplete = onSendComplete;
+                if (param != null)
+                {
+                    param.summary = _summary;
+                    param.onComplete = onSendComplete;
 
-                new HttpSyncUtil().Request(url, parameters, param);
+                    new HttpSyncUtil().Request(url, parameters, param);
+                }
             }
             catch (Exception ex)
             {
                 LogHelper.Error(ex);
-                if (null != param.manualEvent)
-                    param.manualEvent.SetOne();
             }
         }
         #endregion
@@ -58,13 +62,10 @@ namespace beango.quartz
         /// <summary>
         /// 请求完成后要执行的操作
         /// </summary>
-        /// <param name="code">Http状态码</param>
-        /// <param name="result">返回结果</param>
         public static void onSendComplete(RequestData resultData)
         {
             try
             {
-                var dictResult = resultData.result.Trim();
                 resultData.summary.Append("【处理结果】：" + resultData.result.Trim());
 
                 string msid = @resultData.msgList.Aggregate("", (current, yeionItem) => current + (yeionItem.id.ToString() + ","));
@@ -77,11 +78,6 @@ namespace beango.quartz
             catch (Exception ex)
             {
                 LogHelper.Error(ex);
-            }
-            finally
-            {
-                if (null != resultData.manualEvent)
-                    resultData.manualEvent.SetOne();
             }
         }
     }

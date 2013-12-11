@@ -19,7 +19,7 @@ namespace beango.northwindmvc.util
 
         private void AddBindings()
         {
-            kernel.Bind(typeof(IDao<>)).To(typeof(DaoTemplate<>));
+            kernel.Bind(typeof(IDao<>)).To(typeof(DaoMongo<>));
             kernel.Bind<IUserState>().To<UserAuthModule>();
         }
 

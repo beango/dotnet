@@ -235,6 +235,9 @@ namespace beango.northwindmvc.Controllers
 
         protected override void OnAuthorization(System.Web.Mvc.AuthorizationContext filterContext)
         {
+            base.OnAuthorization(filterContext);
+            return;
+
             object[] controllerFilter = filterContext.ActionDescriptor.GetCustomAttributes(typeof(LoginLessAttribute), false);
 
             CookieHelper cookieHelper = new CookieHelper();
@@ -267,7 +270,7 @@ namespace beango.northwindmvc.Controllers
                 //非登录用户跳转
                 Response.Redirect("/User/Login" + (string.IsNullOrEmpty(action) ? "" : "?c=" + controller + "&a=" + action));
             }
-            base.OnAuthorization(filterContext);
+            
             //this.OnInit();//---------------------------------------------切入点
         }
 

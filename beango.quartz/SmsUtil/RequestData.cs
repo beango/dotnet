@@ -20,8 +20,6 @@ namespace beango.quartz
 
         public Action<RequestData> onComplete { get; set; }
 
-        public MutipleThreadResetEvent manualEvent { get; set; }
-
         private string _requestEncoding = "UTF-8";
         public string requestEncoding
         {

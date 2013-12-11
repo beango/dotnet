@@ -4,9 +4,6 @@ using System.Linq;
 using System.Threading;
 using Quartz;
 using beango.dal;
-using beango.dal.PetaPoco;
-using beango.quartz;
-using beango.model;
 using beango.util;
 
 namespace beango.quartz
@@ -16,11 +13,8 @@ namespace beango.quartz
     /// </summary>
     public class SmsIntervalSendWork : IJob
     {
-        private static object syncRoot = new object();
-        public SmsIntervalSendWork()
-        {
-
-        }
+        private static readonly object syncRoot = new object();
+        
         public void Execute(IJobExecutionContext context)
         {
             bool lockTaken = false;
@@ -36,16 +30,17 @@ namespace beango.quartz
             }
             catch (Exception ex)
             {
-                JobExecutionException exception = new JobExecutionException(ex);
-                exception.Source = context.JobDetail.Key.ToString();
-                exception.UnscheduleFiringTrigger = true;
+                JobExecutionException exception = new JobExecutionException(ex)
+                                                      {
+                                                          Source = context.JobDetail.Key.ToString(),
+                                                          UnscheduleFiringTrigger = true
+                                                      };
                 LogHelper.Error(exception);
             }
         }
 
         public static void SendSms(List<dynamic> msgList)
         {
-            var countdown = new MutipleThreadResetEvent();
             try
             {
                 const int NumPer = 100;//接口每次最多发送的消息条数
@@ -59,18 +54,15 @@ namespace beango.quartz
                         var sendSMS = group.Skip(index).Take(NumPer).ToList();
                         if (sendSMS.Count > 0)
                         {
-                            countdown.RegisterEvent();
-                            RequestData param = new RequestData()
+                            RequestData param = new RequestData
                                                     {
-                                                        msgList = sendSMS,
-                                                        manualEvent = countdown
+                                                        msgList = sendSMS
                                                     };
                             ThreadPool.QueueUserWorkItem(new YeionSmsService().SendMultiSms, param);
                             index += sendSMS.Count;
                         }
                     }
                 }
-                countdown.WaitAll();
             }
             catch (Exception e)
             {

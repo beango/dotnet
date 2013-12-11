@@ -116,5 +116,10 @@ namespace beango.dal
         /// <typeparam name="TResult"></typeparam>
         /// <param name="pi"></param>
         void Pager<Tkey, TResult>(PageInfo<T, Tkey, TResult> pi);
+
+        /// <summary>
+        /// 初始化数据
+        /// </summary>
+        void InitDB();
     }
 }

@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Text;
 using System.Data.Objects.DataClasses;
 using System.Data;
 using System.Data.EntityClient;
@@ -12,13 +8,11 @@ using System.Data.Metadata.Edm;
 using System.Data.Mapping;
 using System.Reflection;
 using System.Collections;
-using System.Threading;
 using System.Data.Objects;
 using System.Runtime.Serialization;
 using System.Configuration;
 using System.Data.Common;
 using System.Linq.Expressions;
-using beango.model;
 
 namespace beango.dal
 {
@@ -382,5 +376,8 @@ namespace beango.dal
 
         }
 
+        public void InitDB()
+        {
+        }
     }
 }

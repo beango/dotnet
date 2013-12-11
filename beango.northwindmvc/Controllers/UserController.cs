@@ -19,6 +19,12 @@ namespace beango.northwindmvc.Controllers
         }
 
         [LoginLess]
+        public override ActionResult Create()
+        {
+            return base.Create();
+        }
+
+        [LoginLess]
         public ActionResult Login()
         {
             return View();

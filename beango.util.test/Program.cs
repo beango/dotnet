@@ -1,35 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml.Serialization;
-using beango.model;
-using fastJSON;
+using System.IO;
 
 namespace beango.util.test
 {
     class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            var prolist = new Products()
-                              {
-                                  ProductID = 1
-                              };
-            var jsonstr = JSON.Instance.ToJSON(prolist);
-            Console.WriteLine(jsonstr);
+            try
+            {
+                Console.WriteLine("Reading login data...");
 
-            var p = JSON.Instance.ToObject<Products>(jsonstr);
-            Console.WriteLine(p.ProductID);
+
+                var loginData = File.ReadAllLines("Login.txt");
+
+                string hostAddress = loginData[0];
+                string username = loginData[1];
+                string password = loginData[2];
+
+                var ftp = new Ftputil(hostAddress, username, password);
+                //ftp.createFolder("test1");
+                Console.WriteLine(ftp.existsFolder("test1"));
+                //ftp.deleteFolder("test1");
+                ftp.upload(new FileStream("Login.txt",FileMode.Open,FileAccess.Read));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
-    }
 
-    [XmlRoot("products")]
-    public class productlist
-    {
-        //[XmlArrayItem("product")]
-        //[XmlArray("cccccccccccc")]
-        [XmlElement("product")]
-        public List<Products> products { get; set; }
     }
 }

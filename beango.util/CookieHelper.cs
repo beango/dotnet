@@ -6,6 +6,9 @@ using System.Web;
 
 namespace beango.util
 {
+    /*
+     * 
+     */
     public class CookieHelper
     {
         //设置Cookies
