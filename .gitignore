@@ -3,3 +3,4 @@ _ReSharper.beango
 */bin/*
 beango.model/App_Data/Northwind_log.LDF
 TestResults
+packages
