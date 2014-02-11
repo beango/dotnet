@@ -16,6 +16,7 @@ namespace beango.webapihost
             {
                 _server = new HttpSelfHostServer(_config);
                 _server.OpenAsync().Wait();
+                Console.WriteLine("服务已经启动，绑定地址："+ServiceAddress);
             }
             else
             {

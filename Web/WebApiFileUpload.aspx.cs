@@ -21,7 +21,7 @@ namespace Web
         {
             if (!IsPostBack)
             {
-                BindFiles();
+                //BindFiles();
             }
         }
         /// <summary>
