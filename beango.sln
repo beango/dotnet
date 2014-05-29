@@ -1,18 +1,26 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBContext", "DBContext", "{72E07869-A214-441D-AC65-F4F532B298EF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.model", "beango.model\beango.model.csproj", "{9A1693A5-3C99-44DF-9C73-D97D057EEAAE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "beango.npoi", "beango.npoi", "{BC773F21-7F0F-4C9B-8C46-8C56BBAB46F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.npoi", "beango.npoi\beango.npoi.csproj", "{A4E71125-25A8-43EA-BDFB-A449575CD815}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinService", "WinService", "{876D6D49-55C0-43CD-BB45-0A15EC0D9D6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.quartz", "beango.quartz\beango.quartz.csproj", "{239C8B35-4245-478E-846F-8491A9877CB3}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{12C28F77-3E80-4D64-A00B-D3032BBBF16D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MvcModel", "MvcModel", "{007F6A2E-066B-49C1-B68F-88F3C7350B55}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "webapi", "webapi", "{70D02795-0402-446E-A5F6-2DF52246C0DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OAuth", "OAuth", "{D2EA723C-723E-4B86-8F60-F8BBF7B44EDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.model", "beango.model\beango.model.csproj", "{9A1693A5-3C99-44DF-9C73-D97D057EEAAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.npoi", "beango.npoi\beango.npoi.csproj", "{A4E71125-25A8-43EA-BDFB-A449575CD815}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.quartz", "beango.quartz\beango.quartz.csproj", "{239C8B35-4245-478E-846F-8491A9877CB3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.util", "beango.util\beango.util.csproj", "{E2D7AF80-85DB-41A0-BFD5-2FFADC916A12}"
 EndProject
@@ -22,20 +30,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.speedm", "beango.spe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.northwindmvc", "beango.northwindmvc\beango.northwindmvc.csproj", "{E346486C-1D38-41BD-97BA-FA22FFB4DE28}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MvcModel", "MvcModel", "{007F6A2E-066B-49C1-B68F-88F3C7350B55}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.nauth", "beango.nauth\beango.nauth.csproj", "{C1900FA2-74F5-4801-9830-D2263FEF38C5}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "webapi", "webapi", "{70D02795-0402-446E-A5F6-2DF52246C0DF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.webapihost.test", "Web\beango.webapihost.test.csproj", "{B81C0CD3-C84F-4D82-90E4-07C885F0FF6D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.webapihost", "beango.webapihost\beango.webapihost.csproj", "{513BCB02-9390-4B58-9A00-420486FA5379}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OPServer", "OPServer\OPServer.csproj", "{C3E68561-3910-420F-8415-7A95FA9E5BE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuthServiceProvider", "OAuthServiceProvider\OAuthServiceProvider.csproj", "{CAA2408C-6918-4902-A512-58BCD62216C3}"
+EndProject
 Global
-	GlobalSection(TestCaseManagementSettings) = postSolution
-		CategoryFile = beango.vsmdi
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -145,19 +150,44 @@ Global
 		{513BCB02-9390-4B58-9A00-420486FA5379}.Release|Mixed Platforms.Build.0 = Release|x86
 		{513BCB02-9390-4B58-9A00-420486FA5379}.Release|x86.ActiveCfg = Release|x86
 		{513BCB02-9390-4B58-9A00-420486FA5379}.Release|x86.Build.0 = Release|x86
+		{C3E68561-3910-420F-8415-7A95FA9E5BE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3E68561-3910-420F-8415-7A95FA9E5BE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3E68561-3910-420F-8415-7A95FA9E5BE7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C3E68561-3910-420F-8415-7A95FA9E5BE7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C3E68561-3910-420F-8415-7A95FA9E5BE7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C3E68561-3910-420F-8415-7A95FA9E5BE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3E68561-3910-420F-8415-7A95FA9E5BE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3E68561-3910-420F-8415-7A95FA9E5BE7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C3E68561-3910-420F-8415-7A95FA9E5BE7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{C3E68561-3910-420F-8415-7A95FA9E5BE7}.Release|x86.ActiveCfg = Release|Any CPU
+		{CAA2408C-6918-4902-A512-58BCD62216C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAA2408C-6918-4902-A512-58BCD62216C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAA2408C-6918-4902-A512-58BCD62216C3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{CAA2408C-6918-4902-A512-58BCD62216C3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{CAA2408C-6918-4902-A512-58BCD62216C3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CAA2408C-6918-4902-A512-58BCD62216C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAA2408C-6918-4902-A512-58BCD62216C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAA2408C-6918-4902-A512-58BCD62216C3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{CAA2408C-6918-4902-A512-58BCD62216C3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{CAA2408C-6918-4902-A512-58BCD62216C3}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9A1693A5-3C99-44DF-9C73-D97D057EEAAE} = {72E07869-A214-441D-AC65-F4F532B298EF}
-		{0CED86E8-C97C-4CB1-999A-5C4774DC4657} = {72E07869-A214-441D-AC65-F4F532B298EF}
 		{A4E71125-25A8-43EA-BDFB-A449575CD815} = {BC773F21-7F0F-4C9B-8C46-8C56BBAB46F0}
 		{239C8B35-4245-478E-846F-8491A9877CB3} = {876D6D49-55C0-43CD-BB45-0A15EC0D9D6B}
 		{E2D7AF80-85DB-41A0-BFD5-2FFADC916A12} = {12C28F77-3E80-4D64-A00B-D3032BBBF16D}
+		{0CED86E8-C97C-4CB1-999A-5C4774DC4657} = {72E07869-A214-441D-AC65-F4F532B298EF}
 		{E346486C-1D38-41BD-97BA-FA22FFB4DE28} = {007F6A2E-066B-49C1-B68F-88F3C7350B55}
 		{C1900FA2-74F5-4801-9830-D2263FEF38C5} = {007F6A2E-066B-49C1-B68F-88F3C7350B55}
-		{513BCB02-9390-4B58-9A00-420486FA5379} = {70D02795-0402-446E-A5F6-2DF52246C0DF}
 		{B81C0CD3-C84F-4D82-90E4-07C885F0FF6D} = {70D02795-0402-446E-A5F6-2DF52246C0DF}
+		{513BCB02-9390-4B58-9A00-420486FA5379} = {70D02795-0402-446E-A5F6-2DF52246C0DF}
+		{C3E68561-3910-420F-8415-7A95FA9E5BE7} = {D2EA723C-723E-4B86-8F60-F8BBF7B44EDE}
+		{CAA2408C-6918-4902-A512-58BCD62216C3} = {D2EA723C-723E-4B86-8F60-F8BBF7B44EDE}
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = beango.vsmdi
 	EndGlobalSection
 EndGlobal

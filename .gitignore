@@ -4,3 +4,5 @@ _ReSharper.beango
 beango.model/App_Data/Northwind_log.LDF
 TestResults
 packages
+test.cs
+test.exe
