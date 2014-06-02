@@ -11,11 +11,11 @@ namespace beango.util
         /// <summary>
         /// 文件上传
         /// </summary>
-        /// <param name="url"></param>
-        /// <param name="buffer"></param>
-        /// <param name="fullname"></param>
-        /// <param name="contentType"></param>
-        /// <param name="nvc"></param>
+        /// <param name="url">上传url</param>
+        /// <param name="buffer">上传数据</param>
+        /// <param name="fullname">上传文件名</param>
+        /// <param name="contentType">文档类型</param>
+        /// <param name="nvc">参数</param>
         /// <returns></returns>
         public static string HttpUploadFile(string url, byte[] buffer, string fullname, string contentType, NameValueCollection nvc)
         {
@@ -40,7 +40,7 @@ namespace beango.util
             }
             rs.Write(boundarybytes, 0, boundarybytes.Length);
 
-            string headerTemplate = "Content-Disposition: form-data; name=\"file\"; filename=\"{0}\"\r\nContent-Type: {1}\r\n\r\n";
+            const string headerTemplate = "Content-Disposition: form-data; name=\"file\"; filename=\"{0}\"\r\nContent-Type: {1}\r\n\r\n";
             string header = string.Format(headerTemplate, fullname, contentType);
             byte[] headerbytes = Encoding.UTF8.GetBytes(header);
             rs.Write(headerbytes, 0, headerbytes.Length);
@@ -56,9 +56,12 @@ namespace beango.util
             {
                 wresp = wr.GetResponse();
                 Stream stream2 = wresp.GetResponseStream();
-                StreamReader reader2 = new StreamReader(stream2);
-                var rst = reader2.ReadToEnd();
-                return rst;
+                if (stream2 != null)
+                {
+                    StreamReader reader2 = new StreamReader(stream2);
+                    var rst = reader2.ReadToEnd();
+                    return rst;
+                }
             }
             catch (Exception ex)
             {
@@ -68,7 +71,7 @@ namespace beango.util
                     wresp = null;
                 }
                 LogHelper.Error(ex);
-                throw ex;
+                throw;
             }
             finally
             {
