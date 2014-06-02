@@ -14,8 +14,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MvcModel", "MvcModel", "{00
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "webapi", "webapi", "{70D02795-0402-446E-A5F6-2DF52246C0DF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OAuth", "OAuth", "{D2EA723C-723E-4B86-8F60-F8BBF7B44EDE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.model", "beango.model\beango.model.csproj", "{9A1693A5-3C99-44DF-9C73-D97D057EEAAE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.npoi", "beango.npoi\beango.npoi.csproj", "{A4E71125-25A8-43EA-BDFB-A449575CD815}"
@@ -35,10 +33,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.webapihost.test", "Web\beango.webapihost.test.csproj", "{B81C0CD3-C84F-4D82-90E4-07C885F0FF6D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.webapihost", "beango.webapihost\beango.webapihost.csproj", "{513BCB02-9390-4B58-9A00-420486FA5379}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OPServer", "OPServer\OPServer.csproj", "{C3E68561-3910-420F-8415-7A95FA9E5BE7}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OAuthServiceProvider", "OAuthServiceProvider\OAuthServiceProvider.csproj", "{CAA2408C-6918-4902-A512-58BCD62216C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -150,26 +144,6 @@ Global
 		{513BCB02-9390-4B58-9A00-420486FA5379}.Release|Mixed Platforms.Build.0 = Release|x86
 		{513BCB02-9390-4B58-9A00-420486FA5379}.Release|x86.ActiveCfg = Release|x86
 		{513BCB02-9390-4B58-9A00-420486FA5379}.Release|x86.Build.0 = Release|x86
-		{C3E68561-3910-420F-8415-7A95FA9E5BE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C3E68561-3910-420F-8415-7A95FA9E5BE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C3E68561-3910-420F-8415-7A95FA9E5BE7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{C3E68561-3910-420F-8415-7A95FA9E5BE7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{C3E68561-3910-420F-8415-7A95FA9E5BE7}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{C3E68561-3910-420F-8415-7A95FA9E5BE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C3E68561-3910-420F-8415-7A95FA9E5BE7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C3E68561-3910-420F-8415-7A95FA9E5BE7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{C3E68561-3910-420F-8415-7A95FA9E5BE7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{C3E68561-3910-420F-8415-7A95FA9E5BE7}.Release|x86.ActiveCfg = Release|Any CPU
-		{CAA2408C-6918-4902-A512-58BCD62216C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CAA2408C-6918-4902-A512-58BCD62216C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CAA2408C-6918-4902-A512-58BCD62216C3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{CAA2408C-6918-4902-A512-58BCD62216C3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{CAA2408C-6918-4902-A512-58BCD62216C3}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{CAA2408C-6918-4902-A512-58BCD62216C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CAA2408C-6918-4902-A512-58BCD62216C3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CAA2408C-6918-4902-A512-58BCD62216C3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{CAA2408C-6918-4902-A512-58BCD62216C3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{CAA2408C-6918-4902-A512-58BCD62216C3}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -184,8 +158,6 @@ Global
 		{C1900FA2-74F5-4801-9830-D2263FEF38C5} = {007F6A2E-066B-49C1-B68F-88F3C7350B55}
 		{B81C0CD3-C84F-4D82-90E4-07C885F0FF6D} = {70D02795-0402-446E-A5F6-2DF52246C0DF}
 		{513BCB02-9390-4B58-9A00-420486FA5379} = {70D02795-0402-446E-A5F6-2DF52246C0DF}
-		{C3E68561-3910-420F-8415-7A95FA9E5BE7} = {D2EA723C-723E-4B86-8F60-F8BBF7B44EDE}
-		{CAA2408C-6918-4902-A512-58BCD62216C3} = {D2EA723C-723E-4B86-8F60-F8BBF7B44EDE}
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = beango.vsmdi

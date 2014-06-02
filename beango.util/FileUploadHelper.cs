@@ -6,9 +6,17 @@ using System.Text;
 
 namespace beango.util
 {
-    public class FileHelper
+    public class FileUploadHelper
     {
-        //发送对应表单文本域和一个文件[函数中的输出语句自己调节]
+        /// <summary>
+        /// 文件上传
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="buffer"></param>
+        /// <param name="fullname"></param>
+        /// <param name="contentType"></param>
+        /// <param name="nvc"></param>
+        /// <returns></returns>
         public static string HttpUploadFile(string url, byte[] buffer, string fullname, string contentType, NameValueCollection nvc)
         {
             string boundary = "---------------------------" + DateTime.Now.Ticks.ToString("x");
@@ -22,7 +30,7 @@ namespace beango.util
 
             Stream rs = wr.GetRequestStream();
 
-            string formdataTemplate = "Content-Disposition: form-data; name=\"{0}\"\r\n\r\n{1}";
+            const string formdataTemplate = "Content-Disposition: form-data; name=\"{0}\"\r\n\r\n{1}";
             foreach (string key in nvc.Keys)
             {
                 rs.Write(boundarybytes, 0, boundarybytes.Length);
