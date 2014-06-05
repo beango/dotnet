@@ -7,6 +7,10 @@ using System.Text;
 
 namespace beango.util
 {
+    /*
+     * 数据加密相关类
+     * DES
+     */
     public class EncryptHelper
     {
         #region DES可逆加解密
