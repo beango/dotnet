@@ -14,7 +14,7 @@ namespace beango.util
         /// <param name="url">上传url</param>
         /// <param name="buffer">上传数据</param>
         /// <param name="fullname">上传文件名</param>
-        /// <param name="contentType">文档类型</param>
+        /// <param name="contentType">文档类型:FileUpload1.PostedFile.ContentType</param>
         /// <param name="nvc">参数</param>
         /// <returns></returns>
         public static string HttpUploadFile(string url, byte[] buffer, string fullname, string contentType, NameValueCollection nvc)
