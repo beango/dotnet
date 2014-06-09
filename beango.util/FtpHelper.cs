@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace beango.util
 {
-    public class Ftputil
+    public class FtpHelper
     {
         #region "Atributos/Propriedades"
 
@@ -33,10 +33,10 @@ namespace beango.util
 
         #region "Construtores"
 
-        public Ftputil()
+        public FtpHelper()
         { }
 
-        public Ftputil(string uri, string user, string pass)
+        public FtpHelper(string uri, string user, string pass)
         {
             try
             {
