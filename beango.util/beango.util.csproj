@@ -55,7 +55,7 @@
     <Compile Include="CookieHelper.cs" />
     <Compile Include="EncryptHelper.cs" />
     <Compile Include="FileUploadHelper.cs" />
-    <Compile Include="Ftputil.cs" />
+    <Compile Include="FtpHelper.cs" />
     <Compile Include="HttpUtil.cs" />
     <Compile Include="JsonHelper.cs" />
     <Compile Include="LogHelper.cs" />

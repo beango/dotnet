@@ -53,9 +53,10 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CookieHelper.test.cs" />
-    <Compile Include="MyPrincipal.cs" />
+    <Compile Include="FtpHelper.test.cs" />
+    <Compile Include="Util\MyPrincipal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestHttpContext.cs" />
+    <Compile Include="Util\TestHttpContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\beango.util\beango.util.csproj">

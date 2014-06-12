@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
@@ -32,10 +31,6 @@ namespace beango.util
         #endregion
 
         #region "Construtores"
-
-        public FtpHelper()
-        { }
-
         public FtpHelper(string uri, string user, string pass)
         {
             try
@@ -50,25 +45,19 @@ namespace beango.util
                 throw new Exception(ex.Message);
             }
         }
-
         #endregion
 
         #region "Enumeradores"
 
         private enum MethodFtp
         {
-            DeleteFile
-            ,
-            DownloadFile
-                ,
-            ListDirectory
-                ,
-            MakeDirectory
-                ,
-            RemoveDirectory
-                ,
-            UploadFile
-                , GetFileSize
+            DeleteFile,
+            DownloadFile,
+            ListDirectory,
+            MakeDirectory,
+            RemoveDirectory,
+            UploadFile, 
+            GetFileSize
         }
 
         #endregion
@@ -79,7 +68,6 @@ namespace beango.util
 
         #region "Private"
 
-        /// Ok
         /// <summary>Remove os caracteres não necessários na string (\n \r)
         /// </summary>
         /// <param name="text">Texto que deverá ser retirado os caracteres indesejáveis.</param>
@@ -89,7 +77,6 @@ namespace beango.util
             return text.Replace("\n", "").Replace("\r", "");
         }
 
-        /// OK
         /// <summary>Completa com barra (/) o caminho atual configurado no FTP.
         /// </summary>
         private void completeUri()
@@ -99,7 +86,6 @@ namespace beango.util
                     uri += "/";
         }
 
-        /// OK
         /// <summary>Método geral para realizar o download de arquivos.
         /// </summary>
         private void generalDownload(FileStream fileStream)
@@ -124,7 +110,6 @@ namespace beango.util
             response.Close();
         }
 
-        /// OK
         /// <summary>Método geral para realizar o upload de arquivos.
         /// </summary>
         private void generalUpload()
@@ -146,7 +131,6 @@ namespace beango.util
             ftpStream.Close();
         }
 
-        /// OK
         /// <summary>List Diretórios e Arquivos incluídos no caminho configurado no FTP.
         /// </summary>
         /// <returns>Retorna uma lista de textos com informações dos arquivos e diretórios encontrados.</returns>
@@ -166,7 +150,6 @@ namespace beango.util
             return result.ToArray();
         }
 
-        /// OK
         /// <summary>Remove o nome do arquivo em um caminho configurado no FTP.
         /// </summary>
         /// <param name="path">Caminho completo </param>
@@ -180,7 +163,6 @@ namespace beango.util
             }
         }
 
-        /// OK
         /// <summary>Configurado o método FTP utilizado no objeto FtpWebRequest.
         /// </summary>
         /// <param name="method">Método que traz o tipo que se deseja configurar (enumerador Method)</param>
@@ -205,7 +187,6 @@ namespace beango.util
 
         #region "Public"
 
-        /// OK
         /// <summary>Retorna o diretóriod atual configurado no FTP.
         /// </summary>
         /// <returns>Retorna texto com o caminho do endereço atual.</returns>
@@ -245,7 +226,7 @@ namespace beango.util
             }
             catch (Exception ex)
             {
-                EventLog.WriteEntry("WsSkyClasseFtp", ex.Message);
+                throw;
                 return false;
             }
         }
@@ -392,7 +373,7 @@ namespace beango.util
             }
             catch (Exception ex)
             {
-                EventLog.WriteEntry("WsSkyClasseFtp", ex.Message);
+                throw;
                 return false;
             }
             finally
@@ -496,7 +477,7 @@ namespace beango.util
             }
             catch (Exception ex)
             {
-                EventLog.WriteEntry("WsSkyClasseFtp", ex.Message);
+                throw;
                 return null;
             }
         }
@@ -635,7 +616,7 @@ namespace beango.util
             }
             catch (Exception ex)
             {
-                EventLog.WriteEntry("Class FTP", ex.Message);
+                throw;
                 return false;
             }
             finally
@@ -662,7 +643,7 @@ namespace beango.util
             }
             catch (Exception ex)
             {
-                EventLog.WriteEntry("Class FTP", ex.Message);
+                throw;
                 return false;
             }
             finally
@@ -688,7 +669,7 @@ namespace beango.util
             }
             catch (Exception ex)
             {
-                EventLog.WriteEntry("Class FTP", ex.Message);
+                throw;
                 return false;
             }
             finally
