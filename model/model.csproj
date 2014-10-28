@@ -75,7 +75,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Northwind.edmx</DependentUpon>
     </Compile>
-    <Compile Include="NorthwindContext.cs" />
     <Compile Include="Orders.cs">
       <DependentUpon>Northwind.tt</DependentUpon>
     </Compile>

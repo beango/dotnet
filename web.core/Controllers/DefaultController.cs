@@ -6,9 +6,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using web.core.Repositories;
-using web.Models;
 
-namespace web.Controllers
+namespace web.core.Controllers
 {
     [Authorize(Roles = "admin")]
     public class DefaultController : Controller
@@ -41,7 +40,7 @@ namespace web.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(LoginModel model, string returnUrl)
+        public ActionResult Login(web.core.Models.LoginModel model, string returnUrl)
         {
             if (ModelState.IsValid)
             {

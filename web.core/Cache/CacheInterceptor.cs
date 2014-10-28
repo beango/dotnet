@@ -8,7 +8,7 @@ using Ninject.Extensions.Interception.Attributes;
 using Ninject.Extensions.Interception.Request;
 using web.core.Cache;
 
-namespace common
+namespace common.Cache
 {
     public class InterceptCacheAttribute : InterceptAttribute
     {

@@ -18,7 +18,7 @@ namespace web.Areas.PRD
                 "PRD_default",
                 "PRD/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional },
-                new []{"web.Controllers.PRD"}
+                new []{"web.core.Controllers.PRD"}
             );
         }
     }

@@ -12,7 +12,8 @@ using System.Web.Routing;
 using System.Web.Security;
 using web.core.Cache;
 using web.core.Repositories;
-using web.Mappers;
+using System.Data.Entity;
+using web.core.Mappers;
 
 namespace web
 {
@@ -59,6 +60,7 @@ namespace web
 
         private void AddBindings()
         {
+            _kernel.Bind<System.Data.Entity.DbContext>().To<NorthwindContext>().InThreadScope();
             _kernel.Bind<IDatabaseFactory>().To<DatabaseFactory>().InThreadScope();
             _kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
             _kernel.Bind<IProductRepository>().To<ProductRepository>();

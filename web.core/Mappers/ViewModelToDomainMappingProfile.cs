@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using AutoMapper;
 using model;
-using web.Controllers.PRD;
 using System.Reflection;
 using AutoMapper.Impl;
+using web.core.Models;
 
-namespace Web.Mappers
+namespace web.core.Mappers
 {
     class ViewModelToDomainMappingProfile : Profile
     {

@@ -11,13 +11,13 @@ namespace web.core.Repositories
 {
     public class ProductRepository : RepositoryBase<Products>, IProductRepository
     {
-        public ProductRepository(IDatabaseFactory databaseFactory)
-            : base(databaseFactory)
+        public ProductRepository(IDatabaseFactory databaseFactory,System.Data.Entity.DbContext dbContext)
+            : base(databaseFactory,dbContext)
         {
 
         }
 
-        [InterceptCache(TimeOut = 2)]
+        //[InterceptCache(TimeOut = 2)]
         public List<Products> GetAll2()
         {
             return base.GetAll().ToList();

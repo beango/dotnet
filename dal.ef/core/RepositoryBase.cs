@@ -11,12 +11,13 @@ namespace dal.ef.core
 {
     public abstract class RepositoryBase<T> where T : class
     {
-        private NorthwindContext dataContext;
+        private DbContext dataContext;
         private readonly IDbSet<T> dbset;
 
-        protected RepositoryBase(IDatabaseFactory databaseFactory)//
+        protected RepositoryBase(IDatabaseFactory databaseFactory, DbContext _dataContext)//
         {
             DatabaseFactory = databaseFactory;
+            dataContext = _dataContext;
             dbset = DataContext.Set<T>();
         }
 
@@ -26,9 +27,9 @@ namespace dal.ef.core
             private set;
         }
 
-        protected NorthwindContext DataContext
+        protected DbContext DataContext
         {
-            get { return dataContext ?? (dataContext = DatabaseFactory.Get()); }
+            get { return dataContext; }// ?? (dataContext = DatabaseFactory.Get());
         }
 
         public virtual void Add(T entity)
