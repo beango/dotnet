@@ -13,14 +13,12 @@ namespace beango.quartz
         /// </summary>
         static void Main()
         {
-            //ServiceBase[] ServicesToRun;
-            //ServicesToRun = new ServiceBase[] 
-            //{ 
-            //    new SmsTask(),  
-            //};
-            //ServiceBase.Run(ServicesToRun);
-
-            new SmsTask().Start();
+            ServiceBase[] ServicesToRun;
+            ServicesToRun = new ServiceBase[] 
+            { 
+                new ServiceTest(),  
+            };
+            ServiceBase.Run(ServicesToRun);
         }
     }
 }

@@ -1,9 +1,9 @@
 _ReSharper.beango
 */obj/*
 */bin/*
-beango.model/App_Data/Northwind_log.LDF
+beango.sln.DotSettings.user
+beango.sln.docstates.suo
+beango.v12.suo
+beango.vsmdi
 TestResults
 packages
-test.cs
-test.exe
-*.suo
