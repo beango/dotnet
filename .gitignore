@@ -6,3 +6,4 @@ TestResults
 packages
 test.cs
 test.exe
+*.suo

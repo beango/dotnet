@@ -70,10 +70,6 @@
     <Compile Include="SmsTask.designer.cs">
       <DependentUpon>SmsTask.cs</DependentUpon>
     </Compile>
-    <Compile Include="SmsUtil\HttpSyncUtil.cs" />
-    <Compile Include="SmsUtil\MsgData.cs" />
-    <Compile Include="SmsUtil\RequestData.cs" />
-    <Compile Include="SmsUtil\YeionSmsService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
