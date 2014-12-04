@@ -1,5 +1,4 @@
 ﻿using System.Data.Entity;
-using beango.model;
 
 namespace beango.dal
 {

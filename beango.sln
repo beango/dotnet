@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBContext", "DBContext", "{72E07869-A214-441D-AC65-F4F532B298EF}"
 EndProject
@@ -29,8 +29,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.northwindmvc", "beango.northwindmvc\beango.northwindmvc.csproj", "{E346486C-1D38-41BD-97BA-FA22FFB4DE28}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.nauth", "beango.nauth\beango.nauth.csproj", "{C1900FA2-74F5-4801-9830-D2263FEF38C5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.webapihost.test", "Web\beango.webapihost.test.csproj", "{B81C0CD3-C84F-4D82-90E4-07C885F0FF6D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.webapihost", "beango.webapihost\beango.webapihost.csproj", "{513BCB02-9390-4B58-9A00-420486FA5379}"
 EndProject
@@ -126,16 +124,6 @@ Global
 		{C1900FA2-74F5-4801-9830-D2263FEF38C5}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{C1900FA2-74F5-4801-9830-D2263FEF38C5}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C1900FA2-74F5-4801-9830-D2263FEF38C5}.Release|x86.ActiveCfg = Release|Any CPU
-		{B81C0CD3-C84F-4D82-90E4-07C885F0FF6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B81C0CD3-C84F-4D82-90E4-07C885F0FF6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B81C0CD3-C84F-4D82-90E4-07C885F0FF6D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{B81C0CD3-C84F-4D82-90E4-07C885F0FF6D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{B81C0CD3-C84F-4D82-90E4-07C885F0FF6D}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{B81C0CD3-C84F-4D82-90E4-07C885F0FF6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B81C0CD3-C84F-4D82-90E4-07C885F0FF6D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B81C0CD3-C84F-4D82-90E4-07C885F0FF6D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{B81C0CD3-C84F-4D82-90E4-07C885F0FF6D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{B81C0CD3-C84F-4D82-90E4-07C885F0FF6D}.Release|x86.ActiveCfg = Release|Any CPU
 		{513BCB02-9390-4B58-9A00-420486FA5379}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{513BCB02-9390-4B58-9A00-420486FA5379}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{513BCB02-9390-4B58-9A00-420486FA5379}.Debug|Mixed Platforms.Build.0 = Debug|x86
@@ -168,7 +156,6 @@ Global
 		{0CED86E8-C97C-4CB1-999A-5C4774DC4657} = {72E07869-A214-441D-AC65-F4F532B298EF}
 		{E346486C-1D38-41BD-97BA-FA22FFB4DE28} = {007F6A2E-066B-49C1-B68F-88F3C7350B55}
 		{C1900FA2-74F5-4801-9830-D2263FEF38C5} = {007F6A2E-066B-49C1-B68F-88F3C7350B55}
-		{B81C0CD3-C84F-4D82-90E4-07C885F0FF6D} = {70D02795-0402-446E-A5F6-2DF52246C0DF}
 		{513BCB02-9390-4B58-9A00-420486FA5379} = {70D02795-0402-446E-A5F6-2DF52246C0DF}
 		{A8DCBACA-7CF7-419B-8357-4B2A349EFDDD} = {12C28F77-3E80-4D64-A00B-D3032BBBF16D}
 	EndGlobalSection

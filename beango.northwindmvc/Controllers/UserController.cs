@@ -67,7 +67,7 @@ namespace beango.northwindmvc.Controllers
 
         public ActionResult Logout()
         {
-            new CookieHelper().ClearCookie("User");
+            new CookieHelper().RemoveCookie("User");
             return Redirect("/Product/List");
         }
 

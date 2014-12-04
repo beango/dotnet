@@ -1,5 +1,4 @@
 ﻿using System;
-using beango.model;
 
 namespace beango.northwindmvc
 {
