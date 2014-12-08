@@ -12,8 +12,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{12C28F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MvcModel", "MvcModel", "{007F6A2E-066B-49C1-B68F-88F3C7350B55}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "webapi", "webapi", "{70D02795-0402-446E-A5F6-2DF52246C0DF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.model", "beango.model\beango.model.csproj", "{9A1693A5-3C99-44DF-9C73-D97D057EEAAE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.npoi", "beango.npoi\beango.npoi.csproj", "{A4E71125-25A8-43EA-BDFB-A449575CD815}"
@@ -29,8 +27,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.northwindmvc", "beango.northwindmvc\beango.northwindmvc.csproj", "{E346486C-1D38-41BD-97BA-FA22FFB4DE28}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.nauth", "beango.nauth\beango.nauth.csproj", "{C1900FA2-74F5-4801-9830-D2263FEF38C5}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.webapihost", "beango.webapihost\beango.webapihost.csproj", "{513BCB02-9390-4B58-9A00-420486FA5379}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.util.test", "beango.util.test\beango.util.test.csproj", "{A8DCBACA-7CF7-419B-8357-4B2A349EFDDD}"
 EndProject
@@ -124,16 +120,6 @@ Global
 		{C1900FA2-74F5-4801-9830-D2263FEF38C5}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{C1900FA2-74F5-4801-9830-D2263FEF38C5}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C1900FA2-74F5-4801-9830-D2263FEF38C5}.Release|x86.ActiveCfg = Release|Any CPU
-		{513BCB02-9390-4B58-9A00-420486FA5379}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{513BCB02-9390-4B58-9A00-420486FA5379}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{513BCB02-9390-4B58-9A00-420486FA5379}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{513BCB02-9390-4B58-9A00-420486FA5379}.Debug|x86.ActiveCfg = Debug|x86
-		{513BCB02-9390-4B58-9A00-420486FA5379}.Debug|x86.Build.0 = Debug|x86
-		{513BCB02-9390-4B58-9A00-420486FA5379}.Release|Any CPU.ActiveCfg = Release|x86
-		{513BCB02-9390-4B58-9A00-420486FA5379}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{513BCB02-9390-4B58-9A00-420486FA5379}.Release|Mixed Platforms.Build.0 = Release|x86
-		{513BCB02-9390-4B58-9A00-420486FA5379}.Release|x86.ActiveCfg = Release|x86
-		{513BCB02-9390-4B58-9A00-420486FA5379}.Release|x86.Build.0 = Release|x86
 		{A8DCBACA-7CF7-419B-8357-4B2A349EFDDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A8DCBACA-7CF7-419B-8357-4B2A349EFDDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8DCBACA-7CF7-419B-8357-4B2A349EFDDD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -156,7 +142,6 @@ Global
 		{0CED86E8-C97C-4CB1-999A-5C4774DC4657} = {72E07869-A214-441D-AC65-F4F532B298EF}
 		{E346486C-1D38-41BD-97BA-FA22FFB4DE28} = {007F6A2E-066B-49C1-B68F-88F3C7350B55}
 		{C1900FA2-74F5-4801-9830-D2263FEF38C5} = {007F6A2E-066B-49C1-B68F-88F3C7350B55}
-		{513BCB02-9390-4B58-9A00-420486FA5379} = {70D02795-0402-446E-A5F6-2DF52246C0DF}
 		{A8DCBACA-7CF7-419B-8357-4B2A349EFDDD} = {12C28F77-3E80-4D64-A00B-D3032BBBF16D}
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
