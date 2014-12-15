@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBContext", "DBContext", "{72E07869-A214-441D-AC65-F4F532B298EF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "beango.dal", "beango.dal", "{72E07869-A214-441D-AC65-F4F532B298EF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "beango.npoi", "beango.npoi", "{BC773F21-7F0F-4C9B-8C46-8C56BBAB46F0}"
 EndProject
@@ -22,9 +22,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.dal", "beango.dal\be
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.speedm", "beango.speedm\beango.speedm.csproj", "{51F82CE3-7223-42D7-9E86-46FD6BC8D2C4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "beango.auth", "beango.auth", "{5D3FBE63-BFC9-4B22-BBCE-E38B89B827D9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{5157EF0D-E905-41B1-A723-8BDAE4412601}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "beango.web", "beango.web\beango.web.csproj", "{8DCC8AF2-6806-4E04-AB51-C653C20D3014}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "web", "web\web.csproj", "{DDB61EA8-DF6F-42BC-A4D5-6E83834FD54D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dal.ef", "dal.ef\dal.ef.csproj", "{49FD69F5-3DD8-43ED-87CD-3B6A2CAFB498}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "model", "model\model.csproj", "{D0A6F681-13F6-45E7-9F06-FBCE644B615D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -96,16 +100,36 @@ Global
 		{51F82CE3-7223-42D7-9E86-46FD6BC8D2C4}.Release|Mixed Platforms.Build.0 = Release|x86
 		{51F82CE3-7223-42D7-9E86-46FD6BC8D2C4}.Release|x86.ActiveCfg = Release|x86
 		{51F82CE3-7223-42D7-9E86-46FD6BC8D2C4}.Release|x86.Build.0 = Release|x86
-		{8DCC8AF2-6806-4E04-AB51-C653C20D3014}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8DCC8AF2-6806-4E04-AB51-C653C20D3014}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8DCC8AF2-6806-4E04-AB51-C653C20D3014}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{8DCC8AF2-6806-4E04-AB51-C653C20D3014}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{8DCC8AF2-6806-4E04-AB51-C653C20D3014}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{8DCC8AF2-6806-4E04-AB51-C653C20D3014}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8DCC8AF2-6806-4E04-AB51-C653C20D3014}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8DCC8AF2-6806-4E04-AB51-C653C20D3014}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{8DCC8AF2-6806-4E04-AB51-C653C20D3014}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{8DCC8AF2-6806-4E04-AB51-C653C20D3014}.Release|x86.ActiveCfg = Release|Any CPU
+		{DDB61EA8-DF6F-42BC-A4D5-6E83834FD54D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDB61EA8-DF6F-42BC-A4D5-6E83834FD54D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDB61EA8-DF6F-42BC-A4D5-6E83834FD54D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{DDB61EA8-DF6F-42BC-A4D5-6E83834FD54D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{DDB61EA8-DF6F-42BC-A4D5-6E83834FD54D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DDB61EA8-DF6F-42BC-A4D5-6E83834FD54D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDB61EA8-DF6F-42BC-A4D5-6E83834FD54D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDB61EA8-DF6F-42BC-A4D5-6E83834FD54D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{DDB61EA8-DF6F-42BC-A4D5-6E83834FD54D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{DDB61EA8-DF6F-42BC-A4D5-6E83834FD54D}.Release|x86.ActiveCfg = Release|Any CPU
+		{49FD69F5-3DD8-43ED-87CD-3B6A2CAFB498}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49FD69F5-3DD8-43ED-87CD-3B6A2CAFB498}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49FD69F5-3DD8-43ED-87CD-3B6A2CAFB498}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{49FD69F5-3DD8-43ED-87CD-3B6A2CAFB498}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{49FD69F5-3DD8-43ED-87CD-3B6A2CAFB498}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{49FD69F5-3DD8-43ED-87CD-3B6A2CAFB498}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49FD69F5-3DD8-43ED-87CD-3B6A2CAFB498}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49FD69F5-3DD8-43ED-87CD-3B6A2CAFB498}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{49FD69F5-3DD8-43ED-87CD-3B6A2CAFB498}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{49FD69F5-3DD8-43ED-87CD-3B6A2CAFB498}.Release|x86.ActiveCfg = Release|Any CPU
+		{D0A6F681-13F6-45E7-9F06-FBCE644B615D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0A6F681-13F6-45E7-9F06-FBCE644B615D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0A6F681-13F6-45E7-9F06-FBCE644B615D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D0A6F681-13F6-45E7-9F06-FBCE644B615D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D0A6F681-13F6-45E7-9F06-FBCE644B615D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D0A6F681-13F6-45E7-9F06-FBCE644B615D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0A6F681-13F6-45E7-9F06-FBCE644B615D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0A6F681-13F6-45E7-9F06-FBCE644B615D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D0A6F681-13F6-45E7-9F06-FBCE644B615D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{D0A6F681-13F6-45E7-9F06-FBCE644B615D}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -116,7 +140,7 @@ Global
 		{239C8B35-4245-478E-846F-8491A9877CB3} = {876D6D49-55C0-43CD-BB45-0A15EC0D9D6B}
 		{E2D7AF80-85DB-41A0-BFD5-2FFADC916A12} = {12C28F77-3E80-4D64-A00B-D3032BBBF16D}
 		{0CED86E8-C97C-4CB1-999A-5C4774DC4657} = {72E07869-A214-441D-AC65-F4F532B298EF}
-		{8DCC8AF2-6806-4E04-AB51-C653C20D3014} = {5D3FBE63-BFC9-4B22-BBCE-E38B89B827D9}
+		{49FD69F5-3DD8-43ED-87CD-3B6A2CAFB498} = {5157EF0D-E905-41B1-A723-8BDAE4412601}
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = beango.vsmdi

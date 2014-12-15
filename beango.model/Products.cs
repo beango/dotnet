@@ -14,15 +14,13 @@ namespace beango.model
     
     public partial class Products
     {
-        public long ProductID { get; set; }
+        public Nullable<long> ProductID { get; set; }
         public string ProductName { get; set; }
         public Nullable<long> SupplierID { get; set; }
-        public Nullable<long> CategoryID { get; set; }
-        public string QuantityPerUnit { get; set; }
+        public Nullable<Int16> CategoryID { get; set; }
         public Nullable<decimal> UnitPrice { get; set; }
-        public Nullable<long> UnitsInStock { get; set; }
-        public Nullable<long> UnitsOnOrder { get; set; }
-        public Nullable<long> ReorderLevel { get; set; }
-        public string Discontinued { get; set; }
+        public Nullable<byte> UnitsOnOrder { get; set; }
+        public Nullable<DateTime> ReorderTime { get; set; }
+        public bool Discontinued { get; set; }
     }
 }

@@ -50,6 +50,12 @@
     <Compile Include="ToEntityByExpression.cs" />
     <Compile Include="ToEntityByReflection.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\beango.model\beango.model.csproj">
+      <Project>{9a1693a5-3c99-44df-9c73-d97d057eeaae}</Project>
+      <Name>beango.model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
