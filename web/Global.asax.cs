@@ -11,6 +11,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
+using web.Mappers;
 
 namespace web
 {
@@ -21,11 +22,11 @@ namespace web
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
-
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             DependencyResolver.SetResolver(new NinjectDependencyResolver());
+            AutoMapperConfiguration.Configure();
         }
 
         public MvcApplication()
@@ -57,7 +58,8 @@ namespace web
 
         private void AddBindings()
         {
-            //_kernel.Bind<IDatabaseFactory>().To<DatabaseFactory>();
+            _kernel.Bind<IDatabaseFactory>().To<DatabaseFactory>().InSingletonScope(); 
+            _kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
             _kernel.Bind<IProductRepository>().To<ProductRepository>();
 
             //_kernel.Bind(typeof(IDao<>)).To(typeof(DaoTemplate<>));

@@ -9,11 +9,13 @@ namespace dal.ef.core
 {
     public class DatabaseFactory : Disposable, IDatabaseFactory
     {
-        private futuresEntities dataContext;
-        public futuresEntities Get()
+        private NorthwindContext dataContext;
+
+        public NorthwindContext Get()
         {
-            return dataContext ?? (dataContext = new futuresEntities());
+            return dataContext ?? (dataContext = new NorthwindContext());
         }
+
         protected override void DisposeCore()
         {
             if (dataContext != null)

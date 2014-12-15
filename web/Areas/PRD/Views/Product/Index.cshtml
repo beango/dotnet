@@ -1,7 +1,8 @@
-﻿@model IEnumerable<model.Products>
+﻿@model IEnumerable<web.Controllers.PRD.ProductsModel>
 
 @{
     Layout = null;
+    int i = 1;
 }
 
 <!DOCTYPE html>
@@ -17,6 +18,7 @@
     </p>
     <table>
         <tr>
+            <th></th>
             <th>
                 @Html.DisplayNameFor(model => model.ProductID)
             </th>
@@ -52,6 +54,7 @@
     
     @foreach (var item in Model) {
         <tr>
+            <td>@(i++)</td>
             <td>
                 @Html.DisplayFor(modelItem => item.ProductID)
             </td>
@@ -83,7 +86,7 @@
                 @Html.DisplayFor(modelItem => item.Discontinued)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Edit", "Edit", new {  productid=item.ProductID  }) |
                 @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>

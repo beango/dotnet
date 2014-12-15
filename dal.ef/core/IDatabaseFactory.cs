@@ -9,6 +9,6 @@ namespace dal.ef.core
 {
     public interface IDatabaseFactory : IDisposable
     {
-        futuresEntities Get();
+        NorthwindContext Get();
     }
 }

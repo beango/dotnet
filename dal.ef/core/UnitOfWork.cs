@@ -1,4 +1,5 @@
 ﻿using model;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +10,14 @@ namespace dal.ef.core
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly IDatabaseFactory databaseFactory;
-        private futuresEntities dataContext;
+        private IDatabaseFactory databaseFactory;
+        private NorthwindContext dataContext;
 
-        public UnitOfWork(IDatabaseFactory databaseFactory)
+        public UnitOfWork(IDatabaseFactory _databaseFactory)
         {
-            this.databaseFactory = databaseFactory;
+            this.databaseFactory = _databaseFactory;
         }
-
-        protected futuresEntities DataContext
+        protected NorthwindContext DataContext
         {
             get { return dataContext ?? (dataContext = databaseFactory.Get()); }
         }
@@ -27,5 +27,4 @@ namespace dal.ef.core
             DataContext.Commit();
         }
     }
-
 }

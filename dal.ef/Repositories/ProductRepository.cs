@@ -10,7 +10,8 @@ namespace dal.ef.Repositories
 {
     public class ProductRepository : RepositoryBase<Products>, IProductRepository
     {
-        public ProductRepository()
+        public ProductRepository(IDatabaseFactory databaseFactory)
+            : base(databaseFactory)
         {
         }
     }
