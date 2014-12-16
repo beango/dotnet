@@ -49,6 +49,9 @@
     <Reference Include="AutoMapper.Net4">
       <HintPath>..\packages\AutoMapper.3.3.0\lib\net40\AutoMapper.Net4.dll</HintPath>
     </Reference>
+    <Reference Include="LinFu.DynamicProxy">
+      <HintPath>..\packages\LinFu.DynamicProxy.OfficialRelease.1.0.5\lib\net\LinFu.DynamicProxy.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -57,9 +60,16 @@
     <Reference Include="Ninject">
       <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject.Extensions.Interception">
+      <HintPath>..\packages\Ninject.Extensions.Interception.3.2.0.0\lib\net45-full\Ninject.Extensions.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Interception.LinFu">
+      <HintPath>..\packages\Ninject.Extensions.Interception.Linfu.3.2.0.0\lib\net45-full\Ninject.Extensions.Interception.LinFu.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -158,6 +168,7 @@
     <Folder Include="Areas\PRD\Controllers\" />
     <Folder Include="Areas\PRD\Models\" />
     <Folder Include="Areas\PRD\Views\Shared\" />
+    <Folder Include="Interceptor\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -167,9 +178,9 @@
     <Content Include="Views\Default\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\beango.util\beango.util.csproj">
-      <Project>{e2d7af80-85db-41a0-bfd5-2ffadc916a12}</Project>
-      <Name>beango.util</Name>
+    <ProjectReference Include="..\common\common.csproj">
+      <Project>{f17d9892-44a5-4ebd-8a09-60c8661dd6cf}</Project>
+      <Name>common</Name>
     </ProjectReference>
     <ProjectReference Include="..\dal.ef\dal.ef.csproj">
       <Project>{49fd69f5-3dd8-43ed-87cd-3b6a2cafb498}</Project>
@@ -178,6 +189,10 @@
     <ProjectReference Include="..\model\model.csproj">
       <Project>{d0a6f681-13f6-45e7-9f06-fbce644b615d}</Project>
       <Name>model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\web.core\web.core.csproj">
+      <Project>{4095a0dd-354a-4a7b-95ec-b579e416e6d9}</Project>
+      <Name>web.core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -1,11 +1,11 @@
-﻿using dal.ef.Repositories;
-using Ninject;
+﻿using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using web.core.Repositories;
 using web.Models;
 
 namespace web.Controllers

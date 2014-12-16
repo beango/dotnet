@@ -1,5 +1,4 @@
 ﻿using dal.ef.core;
-using dal.ef.Repositories;
 using model;
 using Ninject;
 using System;
@@ -11,6 +10,8 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
+using web.core.Cache;
+using web.core.Repositories;
 using web.Mappers;
 
 namespace web
@@ -62,11 +63,7 @@ namespace web
             _kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
             _kernel.Bind<IProductRepository>().To<ProductRepository>();
 
-            //_kernel.Bind(typeof(IDao<>)).To(typeof(DaoTemplate<>));
-            //_kernel.Bind<ICacheProvider>().To<MemoryCacheProvider>();
-            //_kernel.Bind<IProductRepository>().To<IRepository>();
-            //_kernel.Components.Add<IPlanningStrategy, CachePlanningStrategy<InterceptCacheAttribute, CacheInterceptor>>();
-            //_kernel.Bind<SYS_USER_DAL>().ToSelf();
+            _kernel.Bind<ICacheProvider>().To<MemoryCacheProvider>();
         }
 
         public object GetService(Type serviceType)
