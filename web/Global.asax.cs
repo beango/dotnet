@@ -58,7 +58,7 @@ namespace web
 
         private void AddBindings()
         {
-            _kernel.Bind<IDatabaseFactory>().To<DatabaseFactory>().InSingletonScope(); 
+            _kernel.Bind<IDatabaseFactory>().To<DatabaseFactory>().InThreadScope();
             _kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
             _kernel.Bind<IProductRepository>().To<ProductRepository>();
 

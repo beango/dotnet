@@ -167,6 +167,10 @@
     <Content Include="Views\Default\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\beango.util\beango.util.csproj">
+      <Project>{e2d7af80-85db-41a0-bfd5-2ffadc916a12}</Project>
+      <Name>beango.util</Name>
+    </ProjectReference>
     <ProjectReference Include="..\dal.ef\dal.ef.csproj">
       <Project>{49fd69f5-3dd8-43ed-87cd-3b6a2cafb498}</Project>
       <Name>dal.ef</Name>

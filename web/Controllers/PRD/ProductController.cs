@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using beango.util;
 using dal.ef.core;
 using dal.ef.Repositories;
 using model;
@@ -11,20 +12,31 @@ using System.Web.Mvc;
 
 namespace web.Controllers.PRD
 {
-    [Authorize(Roles = "admin")]
+    //[Authorize(Roles = "admin")]
     public class ProductController : Controller
     {
-        [Inject]
         public IUnitOfWork unitOfWork { get; set; }
-        [Inject]
         public IProductRepository productRepository { get; set; }
 
+        public ProductController(IProductRepository productRepository,IUnitOfWork unitOfWork)
+        {
+            this.productRepository = productRepository;
+            this.unitOfWork = unitOfWork;
+        }
         [HttpGet]
         public ActionResult Index()
         {
-            var list = productRepository.GetAll().ToArray();
-            var nwlist = Mapper.Map<Products[], ICollection<ProductsModel>>(list);
-            return View(nwlist);
+            try
+            {
+                var list = productRepository.GetAll().ToArray();
+                var nwlist = Mapper.Map<Products[], ICollection<ProductsModel>>(list);
+                return View(nwlist);
+            }
+            catch (Exception e)
+            {
+                LogHelper.Error(e);
+                return null;
+            }
         }
 
         [HttpGet]
