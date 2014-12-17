@@ -13,61 +13,23 @@
     <!-- Bootstrap 样式 -->
     @Html.StyleSheet("metronic.bootstrap/css/bootstrap.min.css")
 
-    <link href="/content/metronic.bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+    @Html.StyleSheet("metronic.bootstrap/css/bootstrap-responsive.min.css")
 
-    <link href="/content/metronic.bootstrap/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    @Html.StyleSheet("metronic.bootstrap/css/font-awesome.min.css")
 
-    <link href="/content/metronic.bootstrap/css/style-metro.css" rel="stylesheet" type="text/css"/>
+    @Html.StyleSheet("metronic.bootstrap/css/style-metro.css")
 
-    <link href="/content/metronic.bootstrap/css/style.css" rel="stylesheet" type="text/css"/>
+    @Html.StyleSheet("metronic.bootstrap/css/style.css")
 
-    <link href="/content/metronic.bootstrap/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+    @Html.StyleSheet("metronic.bootstrap/css/style-responsive.css")
 
-    <link href="/content/metronic.bootstrap/css/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+    @Html.StyleSheet("metronic.bootstrap/css/default.css")
 
-    <link href="/content/metronic.bootstrap/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+    @Html.StyleSheet("metronic.bootstrap/css/uniform.default.css")
 
-    <!-- END GLOBAL MANDATORY STYLES -->
-
-    <!-- BEGIN PAGE LEVEL STYLES -->
-
-    <link href="/content/metronic.bootstrap/css/login.css" rel="stylesheet" type="text/css"/>
-
-    <!-- END PAGE LEVEL STYLES -->
-
-    <link rel="shortcut icon" href="/content/metronic.bootstrap/image/favicon.ico" />
+    @Html.StyleSheet("metronic.bootstrap/css/login.css")
 
 </head>
-@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
-{
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
-
-    <fieldset>
-        <legend>Log in Form</legend>
-        <ol>
-            <li>
-                @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName)
-                @Html.ValidationMessageFor(m => m.UserName)
-            </li>
-            <li>
-                @Html.LabelFor(m => m.Password)
-                @Html.PasswordFor(m => m.Password)
-                @Html.ValidationMessageFor(m => m.Password)
-            </li>
-            <li>
-                @Html.CheckBoxFor(m => m.RememberMe)
-                @Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" })
-            </li>
-        </ol>
-        <input type="submit" value="Log in" />
-    </fieldset>
-    <p>
-        @Html.ActionLink("Register", "Register") if you don't have an account.
-    </p>
-}
-
 
 <body class="login">
 
@@ -75,20 +37,19 @@
 
     <div class="logo">
 
-        <img src="media/image/logo-big.png" alt="" /> 
+        <img src="/content/metronic.bootstrap/image/logo-big.png" alt="" />
 
     </div>
 
     <!-- END LOGO -->
-
     <!-- BEGIN LOGIN -->
 
     <div class="content">
 
         <!-- BEGIN LOGIN FORM -->
-
-        <form class="form-vertical login-form" action="index.html">
-
+        @using (Html.BeginForm("Login", "Default", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-vertical login-form" }))
+        {
+            
             <h3 class="form-title">Login to your account</h3>
 
             <div class="alert alert-error hide">
@@ -103,7 +64,7 @@
 
                 <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
 
-                <label class="control-label visible-ie8 visible-ie9">Username</label>
+                <label class="control-label visible-ie8 visible-ie9">@Html.LabelFor(m => m.UserName)</label>
 
                 <div class="controls">
 
@@ -111,8 +72,9 @@
 
                         <i class="icon-user"></i>
 
-                        <input class="m-wrap placeholder-no-fix" type="text" placeholder="Username" name="username"/>
+                        @Html.TextBoxFor(m => m.UserName, new { @class = "m-wrap placeholder-no-fix", placeholder = "UserName" })
 
+                        @Html.ValidationMessageFor(m => m.UserName)
                     </div>
 
                 </div>
@@ -121,7 +83,7 @@
 
             <div class="control-group">
 
-                <label class="control-label visible-ie8 visible-ie9">Password</label>
+                <label class="control-label visible-ie8 visible-ie9">@Html.LabelFor(m => m.Password)</label>
 
                 <div class="controls">
 
@@ -129,8 +91,9 @@
 
                         <i class="icon-lock"></i>
 
-                        <input class="m-wrap placeholder-no-fix" type="password" placeholder="Password" name="password"/>
+                        @Html.PasswordFor(m => m.Password, new { @class = "m-wrap placeholder-no-fix", placeholder = "Password" })
 
+                        @Html.ValidationMessageFor(m => m.Password)
                     </div>
 
                 </div>
@@ -141,15 +104,19 @@
 
                 <label class="checkbox">
 
-                <input type="checkbox" name="remember" value="1"/> Remember me
+                    @Html.CheckBoxFor(m => m.RememberMe) Remember me
 
                 </label>
 
                 <button type="submit" class="btn green pull-right">
 
-                Login <i class="m-icon-swapright m-icon-white"></i>
+                    Login <i class="m-icon-swapright m-icon-white"></i>
 
-                </button>            
+                </button>
+
+                @Html.AntiForgeryToken()
+
+                @Html.ValidationSummary(true)
 
             </div>
 
@@ -171,7 +138,7 @@
 
                 <p>
 
-                    Don't have an account yet ?&nbsp; 
+                    Dont have an account yet ?&nbsp;
 
                     <a href="javascript:;" id="register-btn" class="">Create an account</a>
 
@@ -179,14 +146,12 @@
 
             </div>
 
-        </form>
+        }
 
-        <!-- END LOGIN FORM -->    
+        <!-- END LOGIN FORM -->
     </div>
 
     <!-- END LOGIN -->
-
-    <!-- BEGIN COPYRIGHT -->
 
     <div class="copyright">
 
@@ -194,8 +159,39 @@
 
     </div>
 
-    @Html.JavaScript("jquery/jquery.min.js")
+    <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+    <!-- BEGIN CORE PLUGINS -->
+    @Html.JavaScript("metronic.bootstrap/js/jquery-1.10.1.min.js")
+    @Html.JavaScript("metronic.bootstrap/js/jquery-migrate-1.2.1.min.js")
+    <!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+    @Html.JavaScript("metronic.bootstrap/js/jquery-ui-1.10.1.custom.min.js")
     @Html.JavaScript("metronic.bootstrap/js/bootstrap.min.js")
+    <!--[if lt IE 9]>
+    @Html.JavaScript("metronic.bootstrap/js/excanvas.min.js")
+    @Html.JavaScript("metronic.bootstrap/js/respond.min.js")
+    <![endif]-->
+    @Html.JavaScript("metronic.bootstrap/js/jquery.slimscroll.min.js")
+    @Html.JavaScript("metronic.bootstrap/js/jquery.blockui.min.js")
+    @Html.JavaScript("metronic.bootstrap/js/jquery.cookie.min.js")
+    @Html.JavaScript("metronic.bootstrap/js/jquery.uniform.min.js")
+
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    @Html.JavaScript("metronic.bootstrap/js/jquery.validate.min.js")
+    <!-- END PAGE LEVEL PLUGINS -->
+        
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    @Html.JavaScript("metronic.bootstrap/js/app.js")
+    @Html.JavaScript("metronic.bootstrap/js/login.js")
+    <!-- END PAGE LEVEL SCRIPTS -->
+
+    <script>
+        jQuery(document).ready(function () {
+            //App.init();
+            Login.init();
+        });
+    </script>
+
+    <!-- END JAVASCRIPTS -->
 </body>
 <!-- END BODY -->
 </html>

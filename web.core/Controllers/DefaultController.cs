@@ -23,19 +23,12 @@ namespace web.core.Controllers
             return View(productRepository.GetAll());
         }
 
-        //
-        // GET: /Home/
-        [Authorize(Roles = "admin2")]
-        public ActionResult Index2()
-        {
-            return View("Index");
-        }
-
         [AllowAnonymous]
         public ActionResult Login()
         {
             return View();
         }
+
 
         [HttpPost]
         [AllowAnonymous]

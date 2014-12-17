@@ -5,18 +5,125 @@
 <!DOCTYPE html> 
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
     <title>@ViewBag.Title</title>
     <!-- Bootstrap 样式 -->
     @Html.StyleSheet("metronic.bootstrap/css/bootstrap.min.css")
-
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    @Html.StyleSheet("metronic.bootstrap/css/bootstrap.min.css")
+    @Html.StyleSheet("metronic.bootstrap/css/bootstrap-responsive.min.css")
+    @Html.StyleSheet("metronic.bootstrap/css/font-awesome.min.css")
+    @Html.StyleSheet("metronic.bootstrap/css/style-metro.css")
+    @Html.StyleSheet("metronic.bootstrap/css/style.css")
+    @Html.StyleSheet("metronic.bootstrap/css/style-responsive.css")
+    @Html.StyleSheet("metronic.bootstrap/css/default.css")
+    @Html.StyleSheet("metronic.bootstrap/css/uniform.default.css")
+    <!-- END GLOBAL MANDATORY STYLES -->
     @RenderSection("Head", false)
 </head>
-<body>
-    @RenderBody()
-    @Html.JavaScript("jquery/jquery.min.js")
+<body class="page-header-fixed">
+    <!-- BEGIN HEADER -->
+
+    <div class="header navbar navbar-inverse navbar-fixed-top">
+
+        <!-- BEGIN TOP NAVIGATION BAR -->
+
+        @Html.Partial("Top")
+
+        <!-- END TOP NAVIGATION BAR -->
+
+    </div>
+
+    <!-- END HEADER -->
+    <!-- BEGIN CONTAINER -->
+
+    <div class="page-container row-fluid">
+
+        <!-- BEGIN SIDEBAR -->
+
+        @Html.Partial("Left")
+
+        <!-- END SIDEBAR -->
+        <!-- BEGIN PAGE -->
+
+        <div class="page-content">
+
+            <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+
+            <div id="portlet-config" class="modal hide">
+
+                <div class="modal-header">
+
+                    <button data-dismiss="modal" class="close" type="button"></button>
+
+                    <h3>portlet Settings</h3>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <p>Here will be a configuration form</p>
+
+                </div>
+
+            </div>
+
+            <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+            <!-- BEGIN PAGE CONTAINER-->
+
+            <div class="container-fluid">
+                
+                @RenderBody()
+
+            </div>
+
+            <!-- END PAGE CONTAINER-->
+
+        </div>
+
+        <!-- END PAGE -->
+
+    </div>
+
+    <!-- END CONTAINER -->
+    <!-- BEGIN FOOTER -->
+    <div class="footer">
+        <div class="footer-inner">
+            2013 &copy; Metronic by keenthemes.
+        </div>
+        <div class="footer-tools">
+            <span class="go-top">
+                <i class="icon-angle-up"></i>
+            </span>
+        </div>
+    </div>
+    <!-- END FOOTER -->
+    <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+    <!-- BEGIN CORE PLUGINS -->
+    @Html.JavaScript("metronic.bootstrap/js/jquery-1.10.1.min.js")
+    @Html.JavaScript("metronic.bootstrap/js/jquery-migrate-1.2.1.min.js")
+    <!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+    @Html.JavaScript("metronic.bootstrap/js/jquery-ui-1.10.1.custom.min.js")
     @Html.JavaScript("metronic.bootstrap/js/bootstrap.min.js")
+    <!--[if lt IE 9]>
+    @Html.JavaScript("metronic.bootstrap/js/excanvas.min.js")
+    @Html.JavaScript("metronic.bootstrap/js/respond.min.js")
+    <![endif]-->
+    @Html.JavaScript("metronic.bootstrap/js/jquery.slimscroll.min.js")
+
+    @Html.JavaScript("metronic.bootstrap/js/jquery.blockui.min.js")
+    @Html.JavaScript("metronic.bootstrap/js/jquery.cookie.min.js")
+    @Html.JavaScript("metronic.bootstrap/js/jquery.uniform.min.js")
+    <!-- END CORE PLUGINS -->
+    @Html.JavaScript("metronic.bootstrap/js/app.js")
+    <script>
+        jQuery(document).ready(function () {
+            App.init();
+        });
+    </script>
+    <!-- END JAVASCRIPTS -->
 </body>
 </html>
