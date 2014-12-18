@@ -76,7 +76,56 @@
 
             <div class="container-fluid">
                 
+                <!-- BEGIN PAGE HEADER-->
+
+                <div class="row-fluid">
+
+                    <div class="span12">
+
+                        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+
+                        <h3 class="page-title">
+
+                            @ViewBag.Title <small>@ViewBag.SubTitle</small>
+
+                        </h3>
+
+                        <ul class="breadcrumb">
+
+                            <li>
+
+                                <i class="icon-home"></i>
+
+                                <a href="/">Home</a>
+
+                                <i class="icon-angle-right"></i>
+
+                            </li>
+
+                            <li>
+
+                                <a href="#">Layouts</a>
+
+                                <i class="icon-angle-right"></i>
+
+                            </li>
+
+                            <li><a href="#">Blank Page</a></li>
+
+                        </ul>
+
+                        <!-- END PAGE TITLE & BREADCRUMB-->
+
+                    </div>
+
+                </div>
+
+                <!-- END PAGE HEADER-->
+                <!-- BEGIN PAGE CONTENT-->
+
                 @RenderBody()
+
+                <!-- END PAGE CONTENT-->
 
             </div>
 
@@ -113,7 +162,6 @@
     @Html.JavaScript("metronic.bootstrap/js/respond.min.js")
     <![endif]-->
     @Html.JavaScript("metronic.bootstrap/js/jquery.slimscroll.min.js")
-
     @Html.JavaScript("metronic.bootstrap/js/jquery.blockui.min.js")
     @Html.JavaScript("metronic.bootstrap/js/jquery.cookie.min.js")
     @Html.JavaScript("metronic.bootstrap/js/jquery.uniform.min.js")
@@ -124,6 +172,7 @@
             App.init();
         });
     </script>
+    @RenderSection("Script", false)
     <!-- END JAVASCRIPTS -->
 </body>
 </html>

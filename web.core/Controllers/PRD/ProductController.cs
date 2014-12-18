@@ -13,25 +13,18 @@ using web.core.Repositories;
 
 namespace web.core.Controllers.PRD
 {
-    //[Authorize(Roles = "admin")]
-    public class ProductController : Controller
+    [Authorize(Roles = "admin")]
+    public class ProductController : BaseController<Products>
     {
-        [Inject]
-        public IUnitOfWork unitOfWork { get; set; }
         [Inject]
         public IProductRepository productRepository { get; set; }
 
-        public ProductController(IProductRepository productRepository,IUnitOfWork unitOfWork)
-        {
-            this.productRepository = productRepository;
-            this.unitOfWork = unitOfWork;
-        }
         [HttpGet]
         public ActionResult Index()
         {
             try
             {
-                var list = productRepository.GetAll2().ToArray();
+                var list = productRepository.GetAll().ToArray();
                 var nwlist = Mapper.Map<Products[], ICollection<ProductsModel>>(list);
                 return View(nwlist);
             }

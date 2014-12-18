@@ -12,15 +12,12 @@ namespace web.core.Controllers
     [Authorize(Roles = "admin")]
     public class DefaultController : Controller
     {
-        [Inject]
-        public IProductRepository productRepository{get;set;}
-
         //
         // GET: /Home/
         [Authorize(Roles = "test")]
         public ActionResult Index()
         {
-            return View(productRepository.GetAll());
+            return View();
         }
 
         [AllowAnonymous]
@@ -41,7 +38,7 @@ namespace web.core.Controllers
                                                                                      model.UserName,
                                                                                      DateTime.Now,
                                                                                      DateTime.Now.AddMinutes(20),
-                                                                                     false,
+                                                                                     model.RememberMe,
                                                                                      "admin,test" //自定义数据  
                     );
                 //对authTicket进行加密  

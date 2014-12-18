@@ -17,8 +17,6 @@ using web.core.Mappers;
 
 namespace web
 {
-    // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
-    // visit http://go.microsoft.com/?LinkId=9394801
     public class MvcApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
@@ -63,7 +61,10 @@ namespace web
             _kernel.Bind<System.Data.Entity.DbContext>().To<NorthwindContext>().InThreadScope();
             _kernel.Bind<IDatabaseFactory>().To<DatabaseFactory>().InThreadScope();
             _kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
+            //_kernel.Bind(typeof(IRepository<>)).To(typeof(RepositoryBase<>));
+            
             _kernel.Bind<IProductRepository>().To<ProductRepository>();
+            _kernel.Bind<ICategoryRepository>().To<CategoryRepository>();
 
             _kernel.Bind<ICacheProvider>().To<MemoryCacheProvider>();
         }

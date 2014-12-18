@@ -1,145 +1,202 @@
-﻿@model IEnumerable<web.core.Models.ProductsModel>
-
+﻿@using web.core.Extensions
+@model IEnumerable<web.core.Models.ProductsModel>
 @{
     ViewBag.Title = "Products";
     Layout = "~/Views/Shared/_Layout.cshtml";
     int i = 1;
 }
-<!-- BEGIN PAGE HEADER-->
 
 <div class="row-fluid">
 
     <div class="span12">
 
-        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
 
-        <h3 class="page-title">
+        <div class="portlet box light-grey">
 
-            Products <small>List</small>
+            <div class="portlet-title">
 
-        </h3>
+                <div class="caption"><i class="icon-globe"></i>Managed Table</div>
 
-        <ul class="breadcrumb">
+                <div class="tools">
 
-            <li>
+                    <a href="javascript:;" class="collapse"></a>
 
-                <i class="icon-home"></i>
+                    <a href="#portlet-config" data-toggle="modal" class="config"></a>
 
-                <a href="index.html">Home</a>
+                    <a href="javascript:;" class="reload"></a>
 
-                <i class="icon-angle-right"></i>
+                    <a href="javascript:;" class="remove"></a>
 
-            </li>
+                </div>
 
-            <li>
+            </div>
 
-                <a href="#">Layouts</a>
+            <div class="portlet-body">
 
-                <i class="icon-angle-right"></i>
+                <div class="clearfix">
 
-            </li>
+                    <div class="btn-group">
 
-            <li><a href="#">Blank Page</a></li>
+                        <button id="sample_editable_1_new" class="btn green">
 
-        </ul>
+                            Add New <i class="icon-plus"></i>
 
-        <!-- END PAGE TITLE & BREADCRUMB-->
+                        </button>
+
+                    </div>
+
+                    <div class="btn-group pull-right">
+
+                        <button class="btn dropdown-toggle" data-toggle="dropdown">
+                            Tools <i class="icon-angle-down"></i>
+
+                        </button>
+
+                        <ul class="dropdown-menu pull-right">
+
+                            <li><a href="#">Print</a></li>
+
+                            <li><a href="#">Save as PDF</a></li>
+
+                            <li><a href="#">Export to Excel</a></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <table class="table table-striped table-bordered table-hover" id="sample_1">
+
+                    <thead>
+
+                        <tr>
+
+                            <th style="width:8px;"><input type="checkbox" class="group-checkable" data-set="#sample_1 .checkboxes" /></th>
+
+                            <th>
+                                @Html.DisplayNameFor(model => model.ProductID)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ProductName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.SupplierID)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CategoryID)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.QuantityPerUnit)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.UnitPrice)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.UnitsInStock)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.UnitsOnOrder)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.ReorderLevel)
+                            </th>
+                            <th class="hidden-480">
+                                @Html.DisplayNameFor(model => model.Discontinued)
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+
+                            <tr class="odd gradeX">
+
+                                <td><input type="checkbox" class="checkboxes" value="1" /></td>
+
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ProductID)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ProductName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SupplierID)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CategoryID)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.QuantityPerUnit)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UnitPrice)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UnitsInStock)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.UnitsOnOrder)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.ReorderLevel)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Discontinued)
+                                </td>
+
+                            </tr>
+
+                        }
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <!-- END EXAMPLE TABLE PORTLET-->
 
     </div>
 
 </div>
+@section Head{
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    @Html.StyleSheet("metronic.bootstrap/css/select2_metro.css")
+    @Html.StyleSheet("metronic.bootstrap/css/DT_bootstrap.css")
+    <!-- END PAGE LEVEL STYLES -->    
+}
+@section Script{
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    @Html.JavaScript("metronic.bootstrap/js/select2.min.js")
+    @Html.JavaScript("metronic.bootstrap/js/jquery.dataTables.js")
+    @Html.JavaScript("metronic.bootstrap/js/DT_bootstrap.js")
+    <!-- END PAGE LEVEL PLUGINS -->
+    @Html.JavaScript("metronic.bootstrap/js/table-managed.js")
 
-<!-- END PAGE HEADER-->
-<!-- BEGIN PAGE CONTENT-->
+    <script type="text/javascript">
 
-<div class="row-fluid">
+        jQuery(document).ready(function () {
 
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
-    <div class="table-responsive">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ProductID)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ProductName)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.SupplierID)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.CategoryID)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.QuantityPerUnit)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.UnitPrice)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.UnitsInStock)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.UnitsOnOrder)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.ReorderLevel)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Discontinued)
-                    </th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                    {
-                    <tr>
-                        <td>@(i++)</td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ProductID)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ProductName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.SupplierID)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.CategoryID)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.QuantityPerUnit)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.UnitPrice)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.UnitsInStock)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.UnitsOnOrder)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ReorderLevel)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Discontinued)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Edit", "Edit", new { productid = item.ProductID }) |
-                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-                        </td>
-                    </tr>
-                    }
-            </tbody>
-        </table>
-    </div>
-</div>
+            App.init();
 
-<!-- END PAGE CONTENT-->
+            TableManaged.init();
+
+        });
+
+</script>
+    <script type="text/javascript">
+        $(function () {
+            $("#sample_editable_1_new").click(function () {
+                location.href = "/PRD/Product/Create";
+            });
+        });
+    </script>
+}

@@ -22,6 +22,9 @@ namespace web.core.Mappers
             Mapper.CreateMap<Products, ProductsModel>();
             Mapper.CreateMap<ProductsModel, Products>().ForMember(entity => entity.ProductID, opt => opt.Ignore());
 
+            Mapper.CreateMap<Categories, CategoryModel>();
+            Mapper.CreateMap<CategoryModel, Categories>().ForMember(entity => entity.CategoryID, opt => opt.Ignore());
+
             //IgnoreDtoIdAndVersionPropertyToEntity();
         }
 
