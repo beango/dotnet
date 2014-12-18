@@ -110,9 +110,11 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\CategoryModel.cs" />
     <Compile Include="Models\ProductsModel.cs" />
+    <Compile Include="Models\SupplierModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CategoryRepository.cs" />
     <Compile Include="Repositories\ProductRepository.cs" />
+    <Compile Include="Repositories\SupplierRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -127,9 +129,9 @@
       <Project>{49fd69f5-3dd8-43ed-87cd-3b6a2cafb498}</Project>
       <Name>dal.ef</Name>
     </ProjectReference>
-    <ProjectReference Include="..\model\model.csproj">
-      <Project>{d0a6f681-13f6-45e7-9f06-fbce644b615d}</Project>
-      <Name>model</Name>
+    <ProjectReference Include="..\model.ef\model.ef.csproj">
+      <Project>{40adbfb0-fc83-44ed-8718-da300ec5b844}</Project>
+      <Name>model.ef</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

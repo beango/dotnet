@@ -74,12 +74,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\model\model.csproj">
-      <Project>{d0a6f681-13f6-45e7-9f06-fbce644b615d}</Project>
-      <Name>model</Name>
+    <ProjectReference Include="..\model.ef\model.ef.csproj">
+      <Project>{40adbfb0-fc83-44ed-8718-da300ec5b844}</Project>
+      <Name>model.ef</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

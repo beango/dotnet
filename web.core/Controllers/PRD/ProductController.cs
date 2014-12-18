@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using common;
 using dal.ef.core;
-using model;
+using model.ef;
 using Ninject;
 using System;
 using System.Collections.Generic;
@@ -13,18 +13,21 @@ using web.core.Repositories;
 
 namespace web.core.Controllers.PRD
 {
-    [Authorize(Roles = "admin")]
+    //[Authorize(Roles = "admin")]
     public class ProductController : BaseController<Products>
     {
         [Inject]
         public IProductRepository productRepository { get; set; }
 
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index(int pageindex = 1)
         {
             try
             {
-                var list = productRepository.GetAll().ToArray();
+                if (pageindex < 1)
+                    pageindex = 1;
+                int total;
+                var list = productRepository.GetAll(pageindex, 15, out total).ToArray();
                 var nwlist = Mapper.Map<Products[], ICollection<ProductsModel>>(list);
                 return View(nwlist);
             }
@@ -53,7 +56,7 @@ namespace web.core.Controllers.PRD
             var dbentity = productRepository.GetById(productid);
             var product = Mapper.Map<ProductsModel>(dbentity);
 
-            return View(product);
+            return View("Create",product);
         }
 
         [HttpPost]
@@ -61,6 +64,7 @@ namespace web.core.Controllers.PRD
         {
             if (!ModelState.IsValid)
             {
+                ModelState.AddModelError("","提交失败！");
                 return View(model);
             }
             if (model.ProductID == 0)//ADD
@@ -75,7 +79,7 @@ namespace web.core.Controllers.PRD
                 productRepository.Update(product);
             }
             unitOfWork.Commit();
-            return Redirect("Index");
+            return RedirectToAction("Index");
         }
-    }   
+    }
 }

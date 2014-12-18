@@ -1,4 +1,4 @@
-﻿using model;
+﻿using model.ef;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -12,7 +12,7 @@ namespace dal.ef.core
     public abstract class RepositoryBase<T> where T : class
     {
         private DbContext dataContext;
-        private readonly IDbSet<T> dbset;
+        protected readonly IDbSet<T> dbset;
 
         protected RepositoryBase(IDatabaseFactory databaseFactory, DbContext _dataContext)//
         {

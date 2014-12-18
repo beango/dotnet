@@ -554,9 +554,9 @@
       <Project>{49fd69f5-3dd8-43ed-87cd-3b6a2cafb498}</Project>
       <Name>dal.ef</Name>
     </ProjectReference>
-    <ProjectReference Include="..\model\model.csproj">
-      <Project>{d0a6f681-13f6-45e7-9f06-fbce644b615d}</Project>
-      <Name>model</Name>
+    <ProjectReference Include="..\model.ef\model.ef.csproj">
+      <Project>{40adbfb0-fc83-44ed-8718-da300ec5b844}</Project>
+      <Name>model.ef</Name>
     </ProjectReference>
     <ProjectReference Include="..\web.core\web.core.csproj">
       <Project>{4095a0dd-354a-4a7b-95ec-b579e416e6d9}</Project>
@@ -568,9 +568,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\PRD\Views\Product\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Areas\PRD\Views\Product\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\PRD\Views\Product\Create.cshtml" />

@@ -14,54 +14,17 @@
 
         <div class="portlet box light-grey">
 
-            <div class="portlet-title">
-
-                <div class="caption"><i class="icon-globe"></i>Managed Table</div>
-
-                <div class="tools">
-
-                    <a href="javascript:;" class="collapse"></a>
-
-                    <a href="#portlet-config" data-toggle="modal" class="config"></a>
-
-                    <a href="javascript:;" class="reload"></a>
-
-                    <a href="javascript:;" class="remove"></a>
-
-                </div>
-
-            </div>
-
             <div class="portlet-body">
 
                 <div class="clearfix">
 
                     <div class="btn-group">
 
-                        <button id="sample_editable_1_new" class="btn green">
+                        <button id="sample_editable_1_new" class="btn yellow">
 
                             Add New <i class="icon-plus"></i>
 
                         </button>
-
-                    </div>
-
-                    <div class="btn-group pull-right">
-
-                        <button class="btn dropdown-toggle" data-toggle="dropdown">
-                            Tools <i class="icon-angle-down"></i>
-
-                        </button>
-
-                        <ul class="dropdown-menu pull-right">
-
-                            <li><a href="#">Print</a></li>
-
-                            <li><a href="#">Save as PDF</a></li>
-
-                            <li><a href="#">Export to Excel</a></li>
-
-                        </ul>
 
                     </div>
 
@@ -91,21 +54,17 @@
                                 @Html.DisplayNameFor(model => model.QuantityPerUnit)
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.UnitPrice)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.UnitsInStock)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.UnitsOnOrder)
-                            </th>
-                            <th>
                                 @Html.DisplayNameFor(model => model.ReorderLevel)
                             </th>
                             <th class="hidden-480">
                                 @Html.DisplayNameFor(model => model.Discontinued)
                             </th>
+                            <th>
 
+                            </th>
+                            <th>
+
+                            </th>
                         </tr>
 
                     </thead>
@@ -126,22 +85,13 @@
                                     @Html.DisplayFor(modelItem => item.ProductName)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.SupplierID)
+                                    @Html.DisplayFor(modelItem => item.Suppliers.CompanyName)
                                 </td>
                                 <td>
-                                    @Html.DisplayFor(modelItem => item.CategoryID)
+                                    @Html.DisplayFor(modelItem => item.Categories.CategoryName)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.QuantityPerUnit)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.UnitPrice)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.UnitsInStock)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.UnitsOnOrder)
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.ReorderLevel)
@@ -149,7 +99,10 @@
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Discontinued)
                                 </td>
+                                <td>
+                                @Html.ActionLink("Edit", "Edit", new { productid = item.ProductID }, new {@class="edit" })</td>
 
+                                <td>@Html.ActionLink("Delete", "Delete", new { productid = item.ProductID }, new { @class = "delete" })</td>
                             </tr>
 
                         }
@@ -176,8 +129,8 @@
 @section Script{
     <!-- BEGIN PAGE LEVEL PLUGINS -->
     @Html.JavaScript("metronic.bootstrap/js/select2.min.js")
-    @Html.JavaScript("metronic.bootstrap/js/jquery.dataTables.js")
-    @Html.JavaScript("metronic.bootstrap/js/DT_bootstrap.js")
+    @*@Html.JavaScript("metronic.bootstrap/js/jquery.dataTables.js")
+    @Html.JavaScript("metronic.bootstrap/js/DT_bootstrap.js")*@
     <!-- END PAGE LEVEL PLUGINS -->
     @Html.JavaScript("metronic.bootstrap/js/table-managed.js")
 
@@ -191,7 +144,7 @@
 
         });
 
-</script>
+    </script>
     <script type="text/javascript">
         $(function () {
             $("#sample_editable_1_new").click(function () {

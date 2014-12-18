@@ -1,6 +1,6 @@
 ﻿using common;
 using dal.ef.core;
-using model;
+using model.ef;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,14 +18,16 @@ namespace web.core.Repositories
         }
 
         //[InterceptCache(TimeOut = 2)]
-        public List<Products> GetAll2()
+        public IEnumerable<Products> GetAll(int pageindex, int pagesize, out int recordcount)
         {
-            return base.GetAll().ToList();
+            recordcount = base.dbset.Count();
+            return base.dbset.OrderByDescending(o => o.ProductID)
+                .Skip((pageindex - 1) * pagesize).Take(pagesize);
         }
     }
 
     public interface IProductRepository : IRepository<Products>
     {
-        List<Products> GetAll2();
+        IEnumerable<Products> GetAll(int pageindex, int pagesize, out int recordcount);
     }
 }

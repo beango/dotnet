@@ -14,6 +14,7 @@ using web.core.Cache;
 using web.core.Repositories;
 using System.Data.Entity;
 using web.core.Mappers;
+using model.ef;
 
 namespace web
 {
@@ -65,6 +66,7 @@ namespace web
             
             _kernel.Bind<IProductRepository>().To<ProductRepository>();
             _kernel.Bind<ICategoryRepository>().To<CategoryRepository>();
+            _kernel.Bind<ISupplierRepository>().To<SupplierRepository>();
 
             _kernel.Bind<ICacheProvider>().To<MemoryCacheProvider>();
         }

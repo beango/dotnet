@@ -33,5 +33,8 @@ namespace web.core.Models
 
         [Required]
         public bool Discontinued { get; set; }
+
+        public CategoryModel Categories { get; set; }
+        public SupplierModel Suppliers { get; set; }
     }
 }

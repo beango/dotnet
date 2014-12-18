@@ -8,17 +8,16 @@ using System.Threading.Tasks;
 
 namespace web.core.Repositories
 {
-    public class CategoryRepository : RepositoryBase<Categories>, ICategoryRepository
+    public class SupplierRepository: RepositoryBase<Suppliers>, ISupplierRepository
     {
-        public CategoryRepository(IDatabaseFactory databaseFactory, System.Data.Entity.DbContext dbContext)
+        public SupplierRepository(IDatabaseFactory databaseFactory, System.Data.Entity.DbContext dbContext)
             : base(databaseFactory,dbContext)
         {
 
         }
     }
 
-    public interface ICategoryRepository : IRepository<Categories>
+    public interface ISupplierRepository : IRepository<Suppliers>
     {
-
     }
 }
