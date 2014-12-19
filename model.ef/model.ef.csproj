@@ -111,6 +111,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Northwind.edmx</DependentUpon>
       <LastGenOutput>Northwind.Context.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Northwind.edmx.diagram">
       <DependentUpon>Northwind.edmx</DependentUpon>
@@ -119,6 +120,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Northwind.edmx</DependentUpon>
       <LastGenOutput>Northwind.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

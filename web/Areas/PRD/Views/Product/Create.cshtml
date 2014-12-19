@@ -32,122 +32,18 @@
             <div class="portlet-body form">
 
                 <!-- BEGIN FORM-->
-                @using (Html.BeginForm("Create", "Product", FormMethod.Post, new { @class = "form-horizontal" }))
+                @using (Html.BeginForm("Save", "Product", FormMethod.Post, new { @class = "form-horizontal" }))
                 {
-                <div class="alert alert-error">
 
-                    @*<button class="close" data-dismiss="alert"></button>*@
+                    @Html.Partial("_CreateOrEdit", Model)
+                    
+                    <div class="form-actions">
 
-                    @Html.AntiForgeryToken()
-                    @Html.ValidationSummary(true)
+                        <button type="submit" class="btn blue">Save</button>
 
-                </div>
+                        <button type="button" class="btn">Cancel</button>
 
-                <div class="control-group">
-
-                    @Html.LabelFor(model => model.ProductName, new { @class = "control-label" })
-
-                    <div class="controls">
-
-                        @if (Model!=null){
-                            @Html.HiddenFor(model => model.ProductID)
-                        }
-                        
-                        @Html.EditorFor(model => model.ProductName, new { @class = "span3 m-wrap" })
-
-                        @Html.ValidationMessageFor(model => model.ProductName, null, new { @class = "help-inline" })
                     </div>
-
-                </div>
-
-                <div class="control-group">
-
-                    @Html.LabelFor(model => model.SupplierID, new { @class = "control-label" })
-
-                    <div class="controls">
-                        @Html.EditorFor(model => model.SupplierID, new { @class = "span3 m-wrap" })
-                        @Html.ValidationMessageFor(model => model.SupplierID, null, new { @class = "help-inline" })
-                    </div>
-
-                </div>
-
-                <div class="control-group">
-
-                    @Html.LabelFor(model => model.CategoryID, new { @class = "control-label" })
-                    <div class="controls">
-                        @Html.EditorFor(model => model.CategoryID, new { @class = "span3 m-wrap" })
-                        @Html.ValidationMessageFor(model => model.CategoryID, null, new { @class = "help-inline" })
-                    </div>
-
-                </div>
-
-                <div class="control-group">
-
-                    @Html.LabelFor(model => model.QuantityPerUnit, new { @class = "control-label" })
-                    <div class="controls">
-                        @Html.EditorFor(model => model.QuantityPerUnit, new { @class = "span3 m-wrap" })
-                        @Html.ValidationMessageFor(model => model.QuantityPerUnit, null, new { @class = "help-inline" })
-                    </div>
-
-                </div>
-
-                <div class="control-group">
-
-                    @Html.LabelFor(model => model.UnitPrice, new { @class = "control-label" })
-                    <div class="controls">
-                        @Html.EditorFor(model => model.UnitPrice, new { @class = "span3 m-wrap" })
-                        @Html.ValidationMessageFor(model => model.UnitPrice, null, new { @class = "help-inline" })
-                    </div>
-
-                </div>
-
-                <div class="control-group">
-
-                    @Html.LabelFor(model => model.UnitsInStock, new { @class = "control-label" })
-                    <div class="controls">
-                        @Html.EditorFor(model => model.UnitsInStock, new { @class = "span3 m-wrap" })
-                        @Html.ValidationMessageFor(model => model.UnitsInStock, null, new { @class = "help-inline" })
-                    </div>
-
-                </div>
-
-                <div class="control-group">
-
-                    @Html.LabelFor(model => model.UnitsOnOrder, new { @class = "control-label" })
-                    <div class="controls">
-                        @Html.EditorFor(model => model.UnitsOnOrder, new { @class = "span3 m-wrap" })
-                        @Html.ValidationMessageFor(model => model.UnitsOnOrder, null, new { @class = "help-inline" })
-                    </div>
-
-                </div>
-
-                <div class="control-group">
-
-                    @Html.LabelFor(model => model.ReorderLevel, new { @class = "control-label" })
-                    <div class="controls">
-                        @Html.EditorFor(model => model.ReorderLevel, new { @class = "span3 m-wrap" })
-                        @Html.ValidationMessageFor(model => model.ReorderLevel, null, new { @class = "help-inline" })
-                    </div>
-
-                </div>
-
-                <div class="control-group">
-
-                    @Html.LabelFor(model => model.Discontinued, new { @class = "control-label" })
-                    <div class="controls">
-                        @Html.EditorFor(model => model.Discontinued, new { @class = "span3 m-wrap" })
-                        @Html.ValidationMessageFor(model => model.Discontinued, null, new { @class = "help-inline" })
-                    </div>
-
-                </div>
-
-                <div class="form-actions">
-
-                    <button type="submit" class="btn blue">Save</button>
-
-                    <button type="button" class="btn">Cancel</button>
-
-                </div>
 
                 }
 

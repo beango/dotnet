@@ -1,4 +1,4 @@
-﻿using dal.ef.core;
+﻿using dal;
 using Ninject;
 using System;
 using System.Collections.Generic;

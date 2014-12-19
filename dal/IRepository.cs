@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Linq.Expressions;
 
-namespace dal.ef.core
+namespace dal
 {
     public interface IRepository<T> where T : class
     {

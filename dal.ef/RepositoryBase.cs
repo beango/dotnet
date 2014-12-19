@@ -1,4 +1,5 @@
-﻿using model.ef;
+﻿using model;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,29 +8,19 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace dal.ef.core
+namespace dal
 {
-    public abstract class RepositoryBase<T> where T : class
+    public class RepositoryBase<T> : IRepository<T> where T : class
     {
-        private DbContext dataContext;
-        protected readonly IDbSet<T> dbset;
+        [Inject]
+        public DbContext DataContext { get; set; }
 
-        protected RepositoryBase(IDatabaseFactory databaseFactory, DbContext _dataContext)//
+        private IDbSet<T> dbset
         {
-            DatabaseFactory = databaseFactory;
-            dataContext = _dataContext;
-            dbset = DataContext.Set<T>();
-        }
-
-        protected IDatabaseFactory DatabaseFactory
-        {
-            get;
-            private set;
-        }
-
-        protected DbContext DataContext
-        {
-            get { return dataContext; }// ?? (dataContext = DatabaseFactory.Get());
+            get
+            {
+                return DataContext.Set<T>();
+            }
         }
 
         public virtual void Add(T entity)
@@ -40,7 +31,7 @@ namespace dal.ef.core
         public virtual void Update(T entity)
         {
             dbset.Attach(entity);
-            dataContext.Entry(entity).State = EntityState.Modified;
+            DataContext.Entry(entity).State = EntityState.Modified;
         }
 
         public virtual void Delete(T entity)

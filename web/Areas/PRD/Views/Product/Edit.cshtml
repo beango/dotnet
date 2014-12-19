@@ -1,0 +1,63 @@
+﻿@model web.core.Models.ProductsModel
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row-fluid">
+    <div class="span12">
+
+        <!-- BEGIN VALIDATION STATES-->
+
+        <div class="portlet box blue">
+
+            <div class="portlet-title">
+
+                <div class="caption"><i class="icon-reorder"></i>Validation States</div>
+
+                <div class="tools">
+
+                    <a href="javascript:;" class="collapse"></a>
+
+                    <a href="#portlet-config" data-toggle="modal" class="config"></a>
+
+                    <a href="javascript:;" class="reload"></a>
+
+                    <a href="javascript:;" class="remove"></a>
+
+                </div>
+
+            </div>
+
+            <div class="portlet-body form">
+
+                <!-- BEGIN FORM-->
+                @using (Html.BeginForm("Save", "Product", FormMethod.Post, new { @class = "form-horizontal" }))
+                {
+                    @Html.HiddenFor(model => model.ProductID)
+
+                    @Html.Partial("_CreateOrEdit", Model)
+                    
+                    <div class="form-actions">
+
+                        <button type="submit" class="btn blue">Save</button>
+
+                        <button type="button" class="btn">Cancel</button>
+
+                    </div>
+
+                }
+
+                <!-- END FORM-->
+
+            </div>
+
+        </div>
+
+        <!-- END VALIDATION STATES-->
+
+    </div>
+
+</div>
+
+

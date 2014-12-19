@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace model.ef
+namespace model
 {
     using System;
     using System.Data.Entity;

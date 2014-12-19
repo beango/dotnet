@@ -233,7 +233,7 @@ public void WriteHeader(CodeStringGenerator codeStringGenerator, EntityFramework
 
 public void BeginNamespace(CodeGenerationTools code)
 {
-    var codeNamespace = code.VsNamespaceSuggestion();
+    var codeNamespace = "model";//code.VsNamespaceSuggestion();
     if (!String.IsNullOrEmpty(codeNamespace))
     {
 #>

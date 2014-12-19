@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using AutoMapper;
-using model.ef;
+using model;
 using System.Reflection;
 using AutoMapper.Impl;
 using web.core.Models;
@@ -23,7 +23,8 @@ namespace web.core.Mappers
             Mapper.CreateMap<ProductsModel, Products>()
                 .ForMember(entity => entity.ProductID, opt => opt.Ignore())
                 .ForMember(entity => entity.Categories, opt => opt.Ignore())
-                .ForMember(entity => entity.Suppliers, opt => opt.Ignore());
+                .ForMember(entity => entity.Suppliers, opt => opt.Ignore())
+                ;
 
             Mapper.CreateMap<Categories, CategoryModel>();
             Mapper.CreateMap<CategoryModel, Categories>().ForMember(entity => entity.CategoryID, opt => opt.Ignore());

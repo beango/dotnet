@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace dal.ef.core
+namespace dal
 {
     public interface IUnitOfWork
     {

@@ -1,5 +1,4 @@
-﻿using dal.ef.core;
-using model;
+﻿using model;
 using Ninject;
 using System;
 using System.Collections.Generic;
@@ -14,7 +13,7 @@ using web.core.Cache;
 using web.core.Repositories;
 using System.Data.Entity;
 using web.core.Mappers;
-using model.ef;
+using dal;
 
 namespace web
 {
@@ -59,10 +58,9 @@ namespace web
 
         private void AddBindings()
         {
-            _kernel.Bind<System.Data.Entity.DbContext>().To<NorthwindContext>().InThreadScope();
-            _kernel.Bind<IDatabaseFactory>().To<DatabaseFactory>().InThreadScope();
+            _kernel.Bind<DbContext>().To<NorthwindContext>().InThreadScope();
+            _kernel.Bind(typeof(IRepository<>)).To(typeof(RepositoryBase<>));
             _kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
-            //_kernel.Bind(typeof(IRepository<>)).To(typeof(RepositoryBase<>));
             
             _kernel.Bind<IProductRepository>().To<ProductRepository>();
             _kernel.Bind<ICategoryRepository>().To<CategoryRepository>();

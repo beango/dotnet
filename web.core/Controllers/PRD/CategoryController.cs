@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using common;
-using dal.ef.core;
-using model.ef;
+using dal;
+using model;
 using Ninject;
 using System;
 using System.Collections.Generic;

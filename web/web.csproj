@@ -554,6 +554,10 @@
       <Project>{49fd69f5-3dd8-43ed-87cd-3b6a2cafb498}</Project>
       <Name>dal.ef</Name>
     </ProjectReference>
+    <ProjectReference Include="..\dal\dal.csproj">
+      <Project>{fcf305d3-6d7b-4e33-b025-5346ea41f08f}</Project>
+      <Name>dal</Name>
+    </ProjectReference>
     <ProjectReference Include="..\model.ef\model.ef.csproj">
       <Project>{40adbfb0-fc83-44ed-8718-da300ec5b844}</Project>
       <Name>model.ef</Name>
@@ -603,6 +607,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\PRD\Views\Category\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\PRD\Views\Product\_CreateOrEdit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\PRD\Views\Product\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
