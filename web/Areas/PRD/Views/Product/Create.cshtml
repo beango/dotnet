@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    Html.EnableClientValidation();
 }
 <div class="row-fluid">
     <div class="span12">
@@ -36,12 +37,12 @@
                 {
 
                     @Html.Partial("_CreateOrEdit", Model)
-                    
+
                     <div class="form-actions">
 
                         <button type="submit" class="btn blue">Save</button>
 
-                        <button type="button" class="btn">Cancel</button>
+                        <button type="button" onclick="location.href = '/PRD/Product/Index'; return false;" class="btn">Cancel</button>
 
                     </div>
 

@@ -32,24 +32,26 @@ namespace web.core.Mappers
             Mapper.CreateMap<Suppliers, SupplierModel>();
             Mapper.CreateMap<SupplierModel, Suppliers>().ForMember(entity => entity.SupplierID, opt => opt.Ignore());
 
-            //IgnoreDtoIdAndVersionPropertyToEntity();
+            IgnoreDtoPropertyToEntity<ProductsModel, Products>();
         }
 
         /// <summary>
         /// 对于所有的 DTO 到 Entity 的映射，都忽略 Id 和 Version 属性
         /// <remarks>当从DTO向Entity赋值时，要保持从数据库中加载过来的Entity的Id和Version属性不变！</remarks>
         /// </summary>
-        private void IgnoreDtoIdAndVersionPropertyToEntity<Dto,Entity>()
+        private void IgnoreDtoPropertyToEntity<Dto, Entity>()
         {
             PropertyInfo idProperty = typeof(Entity).GetProperty("Id");
-            PropertyInfo versionProperty = typeof(Entity).GetProperty("Version");
+            PropertyInfo cTimeProperty = typeof(Entity).GetProperty("CreateTime");
             foreach (TypeMap map in Mapper.GetAllTypeMaps())
             {
                 if (typeof(Dto).IsAssignableFrom(map.SourceType)
                     && typeof(Entity).IsAssignableFrom(map.DestinationType))
                 {
+                    if(null != idProperty)
                     map.FindOrCreatePropertyMapFor(new PropertyAccessor(idProperty)).Ignore();
-                    map.FindOrCreatePropertyMapFor(new PropertyAccessor(versionProperty)).Ignore();
+                    if (null != cTimeProperty)
+                        map.FindOrCreatePropertyMapFor(new PropertyAccessor(cTimeProperty)).Ignore();
                 }
             }
         }

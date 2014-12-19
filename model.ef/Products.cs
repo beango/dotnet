@@ -29,6 +29,7 @@ namespace model
         public Nullable<short> UnitsOnOrder { get; set; }
         public Nullable<short> ReorderLevel { get; set; }
         public bool Discontinued { get; set; }
+        public System.DateTime CreateTime { get; set; }
     
         public virtual Categories Categories { get; set; }
         public virtual ICollection<Order_Details> Order_Details { get; set; }

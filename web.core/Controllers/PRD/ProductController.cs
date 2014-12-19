@@ -20,7 +20,7 @@ namespace web.core.Controllers.PRD
         [Inject]
         public IProductRepository productRepository { get; set; }
         [Inject]
-        public ICategoryRepository categoryRepository { get; set; }
+        public IRepository<Categories> categoryRepository { get; set; }
         [Inject]
         public ISupplierRepository supplierRepository { get; set; }
 
@@ -49,6 +49,14 @@ namespace web.core.Controllers.PRD
                 LogHelper.Error(e);
                 return null;
             }
+        }
+
+        [HttpGet]
+        public ActionResult Details(long productid)
+        {
+            var product = productRepository.GetById(productid);
+            var productModel = Mapper.Map<ProductsModel>(product);
+            return View(productModel);
         }
 
         private void GetCommonDT()
@@ -83,11 +91,16 @@ namespace web.core.Controllers.PRD
             if (!ModelState.IsValid)
             {
                 ModelState.AddModelError("", "提交失败！");
-                return View(model);
+                GetCommonDT();
+                if (model.ProductID == 0)//ADD
+                    return View("Create",model);
+                else
+                    return View("Edit", model);
             }
             if (model.ProductID == 0)//ADD
             {
                 var product = Mapper.Map<Products>(model);
+                product.CreateTime = DateTime.Now;
                 productRepository.Add(product);
             }
             else

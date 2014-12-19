@@ -1,0 +1,115 @@
+﻿@model web.core.Models.ProductsModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row-fluid">
+
+    <div class="span12">
+
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+
+        <div class="portlet box light-grey">
+
+            <div class="portlet-body">
+
+                <div class="clearfix">
+
+                    <div class="btn-group">
+
+                        <button id="sample_editable_1_new" class="btn yellow">
+
+                            Add New <i class="icon-plus"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.ProductName)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.ProductName)
+                </div>
+
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.SupplierID)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.SupplierID)
+                </div>
+
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.CategoryID)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.CategoryID)
+                </div>
+
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.QuantityPerUnit)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.QuantityPerUnit)
+                </div>
+
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.UnitPrice)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.UnitPrice)
+                </div>
+
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.UnitsInStock)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.UnitsInStock)
+                </div>
+
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.UnitsOnOrder)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.UnitsOnOrder)
+                </div>
+
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.ReorderLevel)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.ReorderLevel)
+                </div>
+
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.Discontinued)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.Discontinued)
+                </div>
+
+                <div class="display-label">
+                    @Html.DisplayNameFor(model => model.CreateTime)
+                </div>
+                <div class="display-field">
+                    @Html.DisplayFor(model => model.CreateTime)
+                </div>
+                <p>
+                    @Html.ActionLink("Edit", "Edit", new { productid=Model.ProductID }) |
+                    @Html.ActionLink("Back to List", "Index")
+                </p>
+
+
+            </div>
+
+        </div>
+
+        <!-- END EXAMPLE TABLE PORTLET-->
+
+    </div>
+
+</div>

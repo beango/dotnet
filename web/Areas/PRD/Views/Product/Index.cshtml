@@ -3,7 +3,6 @@
 @{
     ViewBag.Title = "Products";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    int i = 1;
 }
 
 <div class="row-fluid">
@@ -65,6 +64,9 @@
                             <th>
 
                             </th>
+                            <th>
+
+                            </th>
                         </tr>
 
                     </thead>
@@ -100,8 +102,11 @@
                                     @Html.DisplayFor(modelItem => item.Discontinued)
                                 </td>
                                 <td>
-                                @Html.ActionLink("Edit", "Edit", new { productid = item.ProductID }, new {@class="edit" })</td>
-
+                                    @Html.ActionLink("Details", "Details", new { productid = item.ProductID }, new { @class = "details" })
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { productid = item.ProductID }, new { @class = "edit" })
+                                </td>
                                 <td>@Html.ActionLink("Delete", "Delete", new { productid = item.ProductID }, new { @class = "delete" })</td>
                             </tr>
 
@@ -124,13 +129,13 @@
     <!-- BEGIN PAGE LEVEL STYLES -->
     @Html.StyleSheet("metronic.bootstrap/css/select2_metro.css")
     @Html.StyleSheet("metronic.bootstrap/css/DT_bootstrap.css")
-    <!-- END PAGE LEVEL STYLES -->    
+    <!-- END PAGE LEVEL STYLES -->
 }
 @section Script{
     <!-- BEGIN PAGE LEVEL PLUGINS -->
     @Html.JavaScript("metronic.bootstrap/js/select2.min.js")
     @*@Html.JavaScript("metronic.bootstrap/js/jquery.dataTables.js")
-    @Html.JavaScript("metronic.bootstrap/js/DT_bootstrap.js")*@
+        @Html.JavaScript("metronic.bootstrap/js/DT_bootstrap.js")*@
     <!-- END PAGE LEVEL PLUGINS -->
     @Html.JavaScript("metronic.bootstrap/js/table-managed.js")
 

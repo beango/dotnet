@@ -63,7 +63,7 @@ namespace web
             _kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
             
             _kernel.Bind<IProductRepository>().To<ProductRepository>();
-            _kernel.Bind<ICategoryRepository>().To<CategoryRepository>();
+            //_kernel.Bind<ICategoryRepository>().To<CategoryRepository>();
             _kernel.Bind<ISupplierRepository>().To<SupplierRepository>();
 
             _kernel.Bind<ICacheProvider>().To<MemoryCacheProvider>();

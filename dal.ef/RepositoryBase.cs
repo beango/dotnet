@@ -70,5 +70,14 @@ namespace dal
         {
             return dbset.Where(where).FirstOrDefault<T>();
         }
+
+        public IEnumerable<T> Page(Expression<Func<T, bool>> where, int pageindex, int pagesize, out int total)
+        {
+            var query = dbset.AsQueryable();
+            if (null != where)
+                query = query.Where(where);
+            total = query.Count();
+            return query.OrderByDescending(o=>0).Skip((pageindex - 1) * pagesize).Take(pagesize);
+        }
     }
 }

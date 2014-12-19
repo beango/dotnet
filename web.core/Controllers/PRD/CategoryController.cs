@@ -25,7 +25,7 @@ namespace web.core.Controllers.PRD
     public class CategoryController : BaseController<Categories>
     {
         [Inject]
-        public ICategoryRepository categoryRepository { get; set; }
+        public IRepository<Categories> categoryRepository { get; set; }
 
         [HttpGet]
         public ActionResult Index()

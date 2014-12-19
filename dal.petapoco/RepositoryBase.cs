@@ -62,5 +62,12 @@ namespace dal
         {
             return DataContext.FetchWhere<T>(where).FirstOrDefault();
         }
+
+        public IEnumerable<T> Page(Expression<Func<T, bool>> where, int pageindex, int pagesize, out int total)
+        {
+            var query = DataContext.FetchWhere<T>(where);
+            total = query.Count();
+            return query.Skip((pageindex - 1) * pagesize).Take(pagesize);
+        }
     }
 }
