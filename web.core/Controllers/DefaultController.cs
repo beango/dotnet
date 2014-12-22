@@ -5,16 +5,19 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using web.core.Authentication;
 using web.core.Repositories;
 
 namespace web.core.Controllers
 {
-    [Authorize(Roles = "admin")]
+    [Authorize(Roles = "Admin")]
     public class DefaultController : Controller
     {
+        [Inject]
+        private IFormsAuthentication formAuthentication { get; set; }
         //
         // GET: /Home/
-        [Authorize(Roles = "test")]
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             return View();
@@ -34,26 +37,34 @@ namespace web.core.Controllers
         {
             if (ModelState.IsValid)
             {
-                FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(1,
-                                                                                     model.UserName,
-                                                                                     DateTime.Now,
-                                                                                     DateTime.Now.AddMinutes(20),
-                                                                                     model.RememberMe,
-                                                                                     "admin,test" //自定义数据  
-                    );
-                //对authTicket进行加密  
-                string encryptedTicket = FormsAuthentication.Encrypt(authTicket);
+                UserInfo userInfo = new UserInfo
+                {
+                    UserId = 1,
+                    DisplayName = model.UserName,
+                    RoleName = "Admin,User"
+                };
 
-                //存入cookie  
-                var authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket);
-                System.Web.HttpContext.Current.Response.Cookies.Add(authCookie);  
+                formAuthentication.SetAuthCookie(this.HttpContext, UserAuthenticationTicketBuilder.CreateAuthenticationTicket(userInfo));
 
-                return RedirectToAction("Index", "Default");
+                if (Url.IsLocalUrl(returnUrl))
+                {
+                    return Redirect(returnUrl);
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Default");
+                }
             }
 
             // If we got this far, something failed, redisplay form
             ModelState.AddModelError("", "The user name or password provided is incorrect.");
             return View(model);
+        }
+
+        public ActionResult Logout()
+        {
+            formAuthentication.Signout();
+            return Redirect("/");
         }
     }
 }

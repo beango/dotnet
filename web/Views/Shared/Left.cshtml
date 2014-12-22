@@ -1,103 +1,40 @@
-﻿<div class="page-sidebar nav-collapse collapse">
-
-    <!-- BEGIN SIDEBAR MENU -->
-
-    <ul class="page-sidebar-menu">
-
-        <li>
-
-            <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-
-            <div class="sidebar-toggler hidden-phone"></div>
-
-            <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-
-        </li>
-
-        <li>
-
-            <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
-
-            <form class="sidebar-search">
-
-                <div class="input-box">
-
-                    <a href="javascript:;" class="remove"></a>
-
-                    <input type="text" placeholder="Search..." />
-
-                    <input type="button" class="submit" value=" " />
-
-                </div>
-
-            </form>
-
-            <!-- END RESPONSIVE QUICK SEARCH FORM -->
-
-        </li>
-
-        <li class="start ">
-
-            <a href="/">
-
-                <i class="icon-home"></i>
-
-                <span class="title">Dashboard</span>
-
-            </a>
-
-        </li>
-
-        <li class="">
-
-            <a href="javascript:;">
-
-                <i class="icon-cogs"></i>
-
-                <span class="title">Products</span>
-
-                <span class="arrow "></span>
-
-            </a>
-
-            <ul class="sub-menu">
-
-                <li>
-
-                    <a href="/PRD/Product/Index">
-
-                        Product
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="/PRD/Category/Index">
-
-                        Category
-                    </a>
-
-                </li>
-
+﻿<!--sidebar-menu-->
+<div id="sidebar">
+    <a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
+    <ul>
+        <li class="active"><a href="index.html"><i class="icon icon-home"></i> <span>Dashboard</span></a> </li>
+        <li> <a href="/PRD/Product/Index"><i class="icon icon-signal"></i> <span>Products</span></a> </li>
+        <li> <a href="/PRD/Category/Index"><i class="icon icon-signal"></i> <span>Categories</span></a> </li>
+        <li class="submenu">
+            <a href="#"><i class="icon icon-th-list"></i> <span>Forms</span> <span class="label label-important">3</span></a>
+            <ul>
+                <li><a href="/PRO/Product/Index">Products</a></li>
+                <li><a href="/PRO/Category/Index">Categories</a></li>
+                <li><a href="form-wizard.html">Suppliers</a></li>
             </ul>
-
         </li>
-
-        <li class="last ">
-
-            <a href="#">
-
-                <i class="icon-bar-chart"></i>
-
-                <span class="title">Visual Charts</span>
-
-            </a>
-
+        <li><a href="buttons.html"><i class="icon icon-tint"></i> <span>Buttons &amp; icons</span></a></li>
+        <li><a href="interface.html"><i class="icon icon-pencil"></i> <span>Eelements</span></a></li>
+        <li class="submenu">
+            <a href="#"><i class="icon icon-file"></i> <span>Addons</span> <span class="label label-important">5</span></a>
+            <ul>
+                <li><a href="index2.html">Dashboard2</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="invoice.html">Invoice</a></li>
+                <li><a href="chat.html">Chat option</a></li>
+            </ul>
         </li>
-
+        <li class="submenu">
+            <a href="#"><i class="icon icon-info-sign"></i> <span>Error</span> <span class="label label-important">4</span></a>
+            <ul>
+                <li><a href="error403.html">Error 403</a></li>
+                <li><a href="error404.html">Error 404</a></li>
+                <li><a href="error405.html">Error 405</a></li>
+                <li><a href="error500.html">Error 500</a></li>
+            </ul>
+        </li>
+        
     </ul>
-
-    <!-- END SIDEBAR MENU -->
-
 </div>
+<!--sidebar-menu-->

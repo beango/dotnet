@@ -166,6 +166,84 @@
     <Content Include="Content\bootstrap\js\bootstrap.min.js" />
     <Content Include="Content\bootstrap\js\npm.js" />
     <Content Include="Content\jquery\jquery.min.js" />
+    <Content Include="Content\matrix-admin\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\matrix-admin\css\bootstrap-wysihtml5.css" />
+    <Content Include="Content\matrix-admin\css\bootstrap.min.css" />
+    <Content Include="Content\matrix-admin\css\colorpicker.css" />
+    <Content Include="Content\matrix-admin\css\datepicker.css" />
+    <Content Include="Content\matrix-admin\css\fullcalendar.css" />
+    <Content Include="Content\matrix-admin\css\jquery.gritter.css" />
+    <Content Include="Content\matrix-admin\css\matrix-login.css" />
+    <Content Include="Content\matrix-admin\css\matrix-media.css" />
+    <Content Include="Content\matrix-admin\css\matrix-style.css" />
+    <Content Include="Content\matrix-admin\css\select2.css" />
+    <Content Include="Content\matrix-admin\css\uniform.css" />
+    <Content Include="Content\matrix-admin\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\matrix-admin\images\backgrounds\calActiveBg.html" />
+    <Content Include="Content\matrix-admin\images\gallery\imgbox3.html" />
+    <Content Include="Content\matrix-admin\img\alpha.html" />
+    <Content Include="Content\matrix-admin\img\breadcrumb.png" />
+    <Content Include="Content\matrix-admin\img\demo\av1.jpg" />
+    <Content Include="Content\matrix-admin\img\demo\av2.jpg" />
+    <Content Include="Content\matrix-admin\img\demo\av3.jpg" />
+    <Content Include="Content\matrix-admin\img\demo\av4.jpg" />
+    <Content Include="Content\matrix-admin\img\demo\av5.jpg" />
+    <Content Include="Content\matrix-admin\img\demo\demo-image1.jpg" />
+    <Content Include="Content\matrix-admin\img\demo\demo-image2.jpg" />
+    <Content Include="Content\matrix-admin\img\demo\demo-image3.jpg" />
+    <Content Include="Content\matrix-admin\img\demo\envelope.png" />
+    <Content Include="Content\matrix-admin\img\gallery\imgbox1.jpg" />
+    <Content Include="Content\matrix-admin\img\gallery\imgbox2.jpg" />
+    <Content Include="Content\matrix-admin\img\gallery\imgbox3.jpg" />
+    <Content Include="Content\matrix-admin\img\gallery\imgbox4.jpg" />
+    <Content Include="Content\matrix-admin\img\gallery\imgbox5.jpg" />
+    <Content Include="Content\matrix-admin\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\matrix-admin\img\glyphicons-halflings.html" />
+    <Content Include="Content\matrix-admin\img\gritter.png" />
+    <Content Include="Content\matrix-admin\img\hue.png" />
+    <Content Include="Content\matrix-admin\img\larrow.png" />
+    <Content Include="Content\matrix-admin\img\line.png" />
+    <Content Include="Content\matrix-admin\img\logo.png" />
+    <Content Include="Content\matrix-admin\img\menu-active.png" />
+    <Content Include="Content\matrix-admin\img\rarrow.png" />
+    <Content Include="Content\matrix-admin\img\saturation.png" />
+    <Content Include="Content\matrix-admin\img\select2.png" />
+    <Content Include="Content\matrix-admin\img\spinner.gif" />
+    <Content Include="Content\matrix-admin\img\sprite.png" />
+    <Content Include="Content\matrix-admin\js\bootstrap-colorpicker.js" />
+    <Content Include="Content\matrix-admin\js\bootstrap-datepicker.js" />
+    <Content Include="Content\matrix-admin\js\bootstrap-wysihtml5.js" />
+    <Content Include="Content\matrix-admin\js\bootstrap.min.js" />
+    <Content Include="Content\matrix-admin\js\excanvas.min.js" />
+    <Content Include="Content\matrix-admin\js\fullcalendar.min.js" />
+    <Content Include="Content\matrix-admin\js\jquery.dataTables.min.js" />
+    <Content Include="Content\matrix-admin\js\jquery.flot.min.js" />
+    <Content Include="Content\matrix-admin\js\jquery.flot.pie.min.js" />
+    <Content Include="Content\matrix-admin\js\jquery.flot.resize.min.js" />
+    <Content Include="Content\matrix-admin\js\jquery.gritter.min.js" />
+    <Content Include="Content\matrix-admin\js\jquery.min.js" />
+    <Content Include="Content\matrix-admin\js\jquery.peity.min.js" />
+    <Content Include="Content\matrix-admin\js\jquery.toggle.buttons.html" />
+    <Content Include="Content\matrix-admin\js\jquery.ui.custom.js" />
+    <Content Include="Content\matrix-admin\js\jquery.uniform.js" />
+    <Content Include="Content\matrix-admin\js\jquery.validate.js" />
+    <Content Include="Content\matrix-admin\js\jquery.wizard.js" />
+    <Content Include="Content\matrix-admin\js\maruti.html" />
+    <Content Include="Content\matrix-admin\js\masked.js" />
+    <Content Include="Content\matrix-admin\js\matrix.calendar.js" />
+    <Content Include="Content\matrix-admin\js\matrix.charts.js" />
+    <Content Include="Content\matrix-admin\js\matrix.chat.js" />
+    <Content Include="Content\matrix-admin\js\matrix.dashboard.js" />
+    <Content Include="Content\matrix-admin\js\matrix.form_common.js" />
+    <Content Include="Content\matrix-admin\js\matrix.form_validation.js" />
+    <Content Include="Content\matrix-admin\js\matrix.interface.js" />
+    <Content Include="Content\matrix-admin\js\matrix.js" />
+    <Content Include="Content\matrix-admin\js\matrix.login.js" />
+    <Content Include="Content\matrix-admin\js\matrix.popover.js" />
+    <Content Include="Content\matrix-admin\js\matrix.tables.js" />
+    <Content Include="Content\matrix-admin\js\matrix.wizard.js" />
+    <Content Include="Content\matrix-admin\js\select2.min.js" />
+    <Content Include="Content\matrix-admin\js\wysihtml5-0.3.0.js" />
     <Content Include="Content\metronic.bootstrap\css\about-us.css" />
     <Content Include="Content\metronic.bootstrap\css\animate.css" />
     <Content Include="Content\metronic.bootstrap\css\blog.css" />
@@ -492,6 +570,7 @@
     <Content Include="Content\metronic.bootstrap\js\jquery.ui.widget.js" />
     <Content Include="Content\metronic.bootstrap\js\jquery.uniform.min.js" />
     <Content Include="Content\metronic.bootstrap\js\jquery.validate.min.js" />
+    <Content Include="Content\metronic.bootstrap\js\jquery.validate.unobtrusive.min.js" />
     <Content Include="Content\metronic.bootstrap\js\jquery.vmap.europe.js" />
     <Content Include="Content\metronic.bootstrap\js\jquery.vmap.germany.js" />
     <Content Include="Content\metronic.bootstrap\js\jquery.vmap.js" />
@@ -603,7 +682,7 @@
     <Content Include="Views\Shared\Left.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\Top.cshtml" />
+    <Content Include="Views\Shared\Head.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\PRD\Views\Category\Index.cshtml" />
@@ -619,6 +698,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\PRD\Views\Product\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\matrix-admin\font-awesome\css\Descr.WD3" />
+    <Content Include="Content\matrix-admin\font-awesome\font\Descr.WD3" />
+    <Content Include="Content\matrix-admin\font-awesome\font\fontawesome-webfont.eot" />
+    <Content Include="Content\matrix-admin\font-awesome\font\fontawesome-webfont.eot%40" />
+    <Content Include="Content\matrix-admin\font-awesome\font\fontawesome-webfont.ttf" />
+    <Content Include="Content\matrix-admin\font-awesome\font\fontawesome-webfont.woff" />
+    <Content Include="Content\matrix-admin\images\backgrounds\blank2" />
+    <Content Include="Content\matrix-admin\images\backgrounds\Descr.WD3" />
+    <Content Include="Content\matrix-admin\images\backgrounds\skype_3Asuniljoshi19%40call" />
+    <Content Include="Content\matrix-admin\img\demo\Descr.WD3" />
+    <Content Include="Content\matrix-admin\img\Descr.WD3" />
+    <Content Include="Content\matrix-admin\img\gallery\Descr.WD3" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

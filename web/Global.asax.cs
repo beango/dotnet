@@ -14,6 +14,7 @@ using web.core.Repositories;
 using System.Data.Entity;
 using web.core.Mappers;
 using dal;
+using web.core.Authentication;
 
 namespace web
 {
@@ -29,19 +30,29 @@ namespace web
             AutoMapperConfiguration.Configure();
         }
 
-        public MvcApplication()
+        public override void Init()
         {
-            AuthorizeRequest += new EventHandler(MvcApplication_AuthorizeRequest);
+            this.PostAuthenticateRequest += this.PostAuthenticateRequestHandler;
+            base.Init();
         }
 
-        void MvcApplication_AuthorizeRequest(object sender, EventArgs e)
+        void PostAuthenticateRequestHandler(object sender, EventArgs e)
         {
-            var id = Context.User.Identity as FormsIdentity;
-            if (id != null && id.IsAuthenticated)
+            HttpCookie authCookie = this.Context.Request.Cookies[FormsAuthentication.FormsCookieName];
+            if (IsValidAuthCookie(authCookie))
             {
-                var roles = id.Ticket.UserData.Split(',');
-                Context.User = new GenericPrincipal(id, roles);
+                var formsAuthentication = DependencyResolver.Current.GetService<IFormsAuthentication>();
+
+                var ticket = formsAuthentication.Decrypt(authCookie.Value);
+                var efmvcUser = new UserModel(ticket);
+                string[] userRoles = efmvcUser.RoleName.Split(',');
+                this.Context.User = new GenericPrincipal(efmvcUser, userRoles);
+                formsAuthentication.SetAuthCookie(this.Context, ticket);
             }
+        }
+        private static bool IsValidAuthCookie(HttpCookie authCookie)
+        {
+            return authCookie != null && !String.IsNullOrEmpty(authCookie.Value);
         }
     }
 
@@ -61,7 +72,8 @@ namespace web
             _kernel.Bind<DbContext>().To<NorthwindContext>().InThreadScope();
             _kernel.Bind(typeof(IRepository<>)).To(typeof(RepositoryBase<>));
             _kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
-            
+            _kernel.Bind<IFormsAuthentication>().To<DefaultFormsAuthentication>();
+
             _kernel.Bind<IProductRepository>().To<ProductRepository>();
             //_kernel.Bind<ICategoryRepository>().To<CategoryRepository>();
             _kernel.Bind<ISupplierRepository>().To<SupplierRepository>();

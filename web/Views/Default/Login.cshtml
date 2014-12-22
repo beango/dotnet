@@ -10,188 +10,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@ViewBag.Title</title>
-    <!-- Bootstrap 样式 -->
-    @Html.StyleSheet("metronic.bootstrap/css/bootstrap.min.css")
-
-    @Html.StyleSheet("metronic.bootstrap/css/bootstrap-responsive.min.css")
-
-    @Html.StyleSheet("metronic.bootstrap/css/font-awesome.min.css")
-
-    @Html.StyleSheet("metronic.bootstrap/css/style-metro.css")
-
-    @Html.StyleSheet("metronic.bootstrap/css/style.css")
-
-    @Html.StyleSheet("metronic.bootstrap/css/style-responsive.css")
-
-    @Html.StyleSheet("metronic.bootstrap/css/default.css")
-
-    @Html.StyleSheet("metronic.bootstrap/css/uniform.default.css")
-
-    @Html.StyleSheet("metronic.bootstrap/css/login.css")
-
+    @Html.StyleSheet("matrix-admin/css/bootstrap.min.css")
+    @Html.StyleSheet("matrix-admin/css/bootstrap-responsive.min.css")
+    @Html.StyleSheet("matrix-admin/css/matrix-login.css")
+    @Html.StyleSheet("matrix-admin/font-awesome/css/font-awesome.css")
 </head>
-
-<body class="login">
-
-    <!-- BEGIN LOGO -->
-
-    <div class="logo">
-
-        <img src="/content/metronic.bootstrap/image/logo-big.png" alt="" />
-
-    </div>
-
-    <!-- END LOGO -->
-    <!-- BEGIN LOGIN -->
-
-    <div class="content">
-
-        <!-- BEGIN LOGIN FORM -->
-        @using (Html.BeginForm("Login", "Default", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-vertical login-form" }))
+<body>
+    <div id="loginbox">
+        @using (Html.BeginForm("Login", "Default", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-vertical login-form", @id = "loginform" }))
         {
-            
-            <h3 class="form-title">Login to your account</h3>
-
-            <div class="alert alert-error hide">
-
-                <button class="close" data-dismiss="alert"></button>
-
-                <span>Enter any username and password.</span>
-
-            </div>
-
+            @Html.AntiForgeryToken()
+            <div class="control-group normal_text"> <h3><img src="/Content/matrix-admin/img/logo.png" alt="Logo" /></h3></div>
             <div class="control-group">
-
-                <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-
-                <label class="control-label visible-ie8 visible-ie9">@Html.LabelFor(m => m.UserName)</label>
-
                 <div class="controls">
-
-                    <div class="input-icon left">
-
-                        <i class="icon-user"></i>
-
+                    <div class="main_input_box">
+                        <span class="add-on bg_lg"><i class="icon-user"></i></span>
                         @Html.TextBoxFor(m => m.UserName, new { @class = "m-wrap placeholder-no-fix", placeholder = "UserName" })
-
                         @Html.ValidationMessageFor(m => m.UserName)
                     </div>
-
                 </div>
-
             </div>
-
             <div class="control-group">
-
-                <label class="control-label visible-ie8 visible-ie9">@Html.LabelFor(m => m.Password)</label>
-
                 <div class="controls">
-
-                    <div class="input-icon left">
-
-                        <i class="icon-lock"></i>
-
+                    <div class="main_input_box">
+                        <span class="add-on bg_ly"><i class="icon-lock"></i></span>
                         @Html.PasswordFor(m => m.Password, new { @class = "m-wrap placeholder-no-fix", placeholder = "Password" })
-
                         @Html.ValidationMessageFor(m => m.Password)
                     </div>
-
                 </div>
-
             </div>
-
             <div class="form-actions">
-
-                <label class="checkbox">
-
-                    @Html.CheckBoxFor(m => m.RememberMe) Remember me
-
-                </label>
-
-                <button type="submit" class="btn green pull-right">
-
-                    Login <i class="m-icon-swapright m-icon-white"></i>
-
-                </button>
-
-                @Html.AntiForgeryToken()
-
-                @Html.ValidationSummary(true)
-
+                <span class="pull-left"><a href="#" class="flip-link btn btn-info" id="to-recover">Lost password?</a></span>
+                <span class="pull-right">
+                    <button type="submit" class="btn green btn-success">
+                        Login <i class="m-icon-swapright m-icon-white"></i>
+                    </button>
+                </span>
             </div>
-
-            <div class="forget-password">
-
-                <h4>Forgot your password ?</h4>
-
-                <p>
-
-                    no worries, click <a href="/" class="" id="forget-password">here</a>
-
-                    to reset your password.
-
-                </p>
-
-            </div>
-
-            <div class="create-account">
-
-                <p>
-
-                    Dont have an account yet ?&nbsp;
-
-                    <a href="/" id="register-btn" class="">Create an account</a>
-
-                </p>
-
-            </div>
-
         }
-
-        <!-- END LOGIN FORM -->
     </div>
-
-    <!-- END LOGIN -->
-
-    <div class="copyright">
-
-        2013 &copy; Metronic. Admin Dashboard Template.
-
-    </div>
-
-    <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
-    <!-- BEGIN CORE PLUGINS -->
-    @Html.JavaScript("metronic.bootstrap/js/jquery-1.10.1.min.js")
-    @Html.JavaScript("metronic.bootstrap/js/jquery-migrate-1.2.1.min.js")
-    <!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-    @Html.JavaScript("metronic.bootstrap/js/jquery-ui-1.10.1.custom.min.js")
-    @Html.JavaScript("metronic.bootstrap/js/bootstrap.min.js")
-    <!--[if lt IE 9]>
-    @Html.JavaScript("metronic.bootstrap/js/excanvas.min.js")
-    @Html.JavaScript("metronic.bootstrap/js/respond.min.js")
-    <![endif]-->
-    @Html.JavaScript("metronic.bootstrap/js/jquery.slimscroll.min.js")
-    @Html.JavaScript("metronic.bootstrap/js/jquery.blockui.min.js")
-    @Html.JavaScript("metronic.bootstrap/js/jquery.cookie.min.js")
-    @Html.JavaScript("metronic.bootstrap/js/jquery.uniform.min.js")
-
-    <!-- BEGIN PAGE LEVEL PLUGINS -->
-    @Html.JavaScript("metronic.bootstrap/js/jquery.validate.min.js")
-    <!-- END PAGE LEVEL PLUGINS -->
-        
-    <!-- BEGIN PAGE LEVEL SCRIPTS -->
-    @Html.JavaScript("metronic.bootstrap/js/app.js")
-    @Html.JavaScript("metronic.bootstrap/js/login.js")
-    <!-- END PAGE LEVEL SCRIPTS -->
-
-    <script>
-        jQuery(document).ready(function () {
-            App.init();
-            Login.init();
-        });
-    </script>
-
-    <!-- END JAVASCRIPTS -->
+    @Html.JavaScript("matrix-admin/js/jquery.min.js")
+    @Html.JavaScript("matrix-admin/js/jquery.validate.js")
+    @Html.JavaScript("metronic.bootstrap/js/jquery.validate.unobtrusive.min.js")
+    @Html.JavaScript("matrix-admin/js/matrix.login.js")
 </body>
 <!-- END BODY -->
 </html>

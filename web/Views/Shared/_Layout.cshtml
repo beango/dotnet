@@ -10,169 +10,67 @@
     <meta content="" name="description" />
     <meta content="" name="author" />
     <title>@ViewBag.Title</title>
-    <!-- Bootstrap 样式 -->
-    @Html.StyleSheet("metronic.bootstrap/css/bootstrap.min.css")
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    @Html.StyleSheet("metronic.bootstrap/css/bootstrap.min.css")
-    @Html.StyleSheet("metronic.bootstrap/css/bootstrap-responsive.min.css")
-    @Html.StyleSheet("metronic.bootstrap/css/font-awesome.min.css")
-    @Html.StyleSheet("metronic.bootstrap/css/style-metro.css")
-    @Html.StyleSheet("metronic.bootstrap/css/style.css")
-    @Html.StyleSheet("metronic.bootstrap/css/style-responsive.css")
-    @Html.StyleSheet("metronic.bootstrap/css/default.css")
-    @Html.StyleSheet("metronic.bootstrap/css/uniform.default.css")
+    @Html.StyleSheet("matrix-admin/css/bootstrap.min.css")
+    @Html.StyleSheet("matrix-admin/css/bootstrap-responsive.min.css")
+    @Html.StyleSheet("matrix-admin/css/fullcalendar.css")
+    @Html.StyleSheet("matrix-admin/css/matrix-style.css")
+    @Html.StyleSheet("matrix-admin/css/matrix-media.css")
+    @Html.StyleSheet("matrix-admin/font-awesome/css/font-awesome.css")
+    @Html.StyleSheet("matrix-admin/css/jquery.gritter.css")
     <!-- END GLOBAL MANDATORY STYLES -->
     @RenderSection("Head", false)
 </head>
-<body class="page-header-fixed">
-    <!-- BEGIN HEADER -->
+<body>
+    
+    @Html.Partial("Head")
+    
+    @Html.Partial("Left")
 
-    <div class="header navbar navbar-inverse navbar-fixed-top">
-
-        <!-- BEGIN TOP NAVIGATION BAR -->
-
-        @Html.Partial("Top")
-
-        <!-- END TOP NAVIGATION BAR -->
-
-    </div>
-
-    <!-- END HEADER -->
-    <!-- BEGIN CONTAINER -->
-
-    <div class="page-container row-fluid">
-
-        <!-- BEGIN SIDEBAR -->
-
-        @Html.Partial("Left")
-
-        <!-- END SIDEBAR -->
-        <!-- BEGIN PAGE -->
-
-        <div class="page-content">
-
-            <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-
-            <div id="portlet-config" class="modal hide">
-
-                <div class="modal-header">
-
-                    <button data-dismiss="modal" class="close" type="button"></button>
-
-                    <h3>portlet Settings</h3>
-
-                </div>
-
-                <div class="modal-body">
-
-                    <p>Here will be a configuration form</p>
-
-                </div>
-
-            </div>
-
-            <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
-            <!-- BEGIN PAGE CONTAINER-->
-
-            <div class="container-fluid">
-                
-                <!-- BEGIN PAGE HEADER-->
-
-                <div class="row-fluid">
-
-                    <div class="span12">
-
-                        <!-- BEGIN PAGE TITLE & BREADCRUMB-->
-
-                        <h3 class="page-title">
-
-                            @ViewBag.Title <small>@ViewBag.SubTitle</small>
-
-                        </h3>
-
-                        <ul class="breadcrumb">
-
-                            <li>
-
-                                <i class="icon-home"></i>
-
-                                <a href="/">Home</a>
-
-                                <i class="icon-angle-right"></i>
-
-                            </li>
-
-                            <li>
-
-                                <a href="#">Layouts</a>
-
-                                <i class="icon-angle-right"></i>
-
-                            </li>
-
-                            <li><a href="#">Blank Page</a></li>
-
-                        </ul>
-
-                        <!-- END PAGE TITLE & BREADCRUMB-->
-
-                    </div>
-
-                </div>
-
-                <!-- END PAGE HEADER-->
-                <!-- BEGIN PAGE CONTENT-->
-
-                @RenderBody()
-
-                <!-- END PAGE CONTENT-->
-
-            </div>
-
-            <!-- END PAGE CONTAINER-->
-
+    <!--main-container-part-->
+    <div id="content">
+        
+        <!--breadcrumbs-->
+        <div id="content-header">
+            <div id="breadcrumb"> <a href="/" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a><a href="#" class="current">Tables</a></div>
         </div>
-
-        <!-- END PAGE -->
-
-    </div>
-
-    <!-- END CONTAINER -->
-    <!-- BEGIN FOOTER -->
-    <div class="footer">
-        <div class="footer-inner">
-            2013 &copy; Metronic by keenthemes.
-        </div>
-        <div class="footer-tools">
-            <span class="go-top">
-                <i class="icon-angle-up"></i>
-            </span>
+        <!--End-breadcrumbs-->
+        <!--Action boxes-->
+        <div class="container-fluid">
+            @RenderBody()
+            <!--End-Action boxes-->
         </div>
     </div>
-    <!-- END FOOTER -->
-    <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
-    <!-- BEGIN CORE PLUGINS -->
-    @Html.JavaScript("metronic.bootstrap/js/jquery-1.10.1.min.js")
-    @Html.JavaScript("metronic.bootstrap/js/jquery-migrate-1.2.1.min.js")
-    <!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
-    @Html.JavaScript("metronic.bootstrap/js/jquery-ui-1.10.1.custom.min.js")
-    @Html.JavaScript("metronic.bootstrap/js/bootstrap.min.js")
-    <!--[if lt IE 9]>
-    @Html.JavaScript("metronic.bootstrap/js/excanvas.min.js")
-    @Html.JavaScript("metronic.bootstrap/js/respond.min.js")
-    <![endif]-->
-    @Html.JavaScript("metronic.bootstrap/js/jquery.slimscroll.min.js")
-    @Html.JavaScript("metronic.bootstrap/js/jquery.blockui.min.js")
-    @Html.JavaScript("metronic.bootstrap/js/jquery.cookie.min.js")
-    @Html.JavaScript("metronic.bootstrap/js/jquery.uniform.min.js")
-    <!-- END CORE PLUGINS -->
-    @Html.JavaScript("metronic.bootstrap/js/app.js")
-    <script>
-        jQuery(document).ready(function () {
-            App.init();
-        });
-    </script>
+
+    <!--end-main-container-part-->
+    <!--Footer-part-->
+
+    <div class="row-fluid">
+        <div id="footer" class="span12"> 2013 &copy; Matrix Admin. Brought to you by <a href="http://themedesigner.in/">Themedesigner.in</a> </div>
+    </div>
+
+    <!--end-Footer-part-->
+    @Html.JavaScript("matrix-admin/js/excanvas.min.js")
+    @Html.JavaScript("matrix-admin/js/jquery.min.js")
+    @Html.JavaScript("matrix-admin/js/jquery.ui.custom.js")
+    @Html.JavaScript("matrix-admin/js/bootstrap.min.js")
+    @Html.JavaScript("matrix-admin/js/jquery.flot.min.js")
+    @Html.JavaScript("matrix-admin/js/jquery.flot.resize.min.js")
+    @Html.JavaScript("matrix-admin/js/jquery.peity.min.js")
+    @Html.JavaScript("matrix-admin/js/fullcalendar.min.js")
+    @Html.JavaScript("matrix-admin/js/matrix.js")
+    @Html.JavaScript("matrix-admin/js/matrix.dashboard.js")
+    @Html.JavaScript("matrix-admin/js/jquery.gritter.min.js")
+    @Html.JavaScript("matrix-admin/js/matrix.interface.js")
+    @Html.JavaScript("matrix-admin/js/matrix.chat.js")
+    @Html.JavaScript("matrix-admin/js/jquery.validate.js")
+    @Html.JavaScript("matrix-admin/js/matrix.form_validation.js")
+    @Html.JavaScript("matrix-admin/js/jquery.wizard.js")
+    @Html.JavaScript("matrix-admin/js/jquery.uniform.js")
+    @Html.JavaScript("matrix-admin/js/select2.min.js")
+    @Html.JavaScript("matrix-admin/js/matrix.popover.js")
+    @Html.JavaScript("matrix-admin/js/jquery.dataTables.min.js")
+    @Html.JavaScript("matrix-admin/js/matrix.tables.js") 
     @RenderSection("Script", false)
-    <!-- END JAVASCRIPTS -->
 </body>
 </html>

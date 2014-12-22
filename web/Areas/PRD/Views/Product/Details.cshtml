@@ -8,108 +8,126 @@
 <div class="row-fluid">
 
     <div class="span12">
+        <div class="tab-pane profile-classic row-fluid" id="tab_1_2">
+            <!-- BEGIN EXAMPLE TABLE PORTLET-->
 
-        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+            <ul class="unstyled span10">
 
-        <div class="portlet box light-grey">
+                <li><span>User Name:</span> JDuser</li>
 
-            <div class="portlet-body">
+                <li><span>First Name:</span> John</li>
 
-                <div class="clearfix">
+            </ul>
+            </div>
+            <div class="portlet box light-grey">
 
-                    <div class="btn-group">
+                <div class="portlet-body">
 
-                        <button id="sample_editable_1_new" class="btn yellow">
+                    <div class="clearfix">
 
-                            Add New <i class="icon-plus"></i>
+                        <div class="btn-group">
 
-                        </button>
+                            <button id="sample_editable_1_new" class="btn yellow">
+
+                                Add New <i class="icon-plus"></i>
+
+                            </button>
+
+                        </div>
 
                     </div>
 
-                </div>
+                    <div class="control-group">
+                        @Html.DisplayNameFor(model => model.ProductName)
+                        <div class="controls">
+                            @Html.DisplayFor(model => model.ProductName)
+                        </div>
+                    </div>
 
-                <div class="display-label">
-                    @Html.DisplayNameFor(model => model.ProductName)
-                </div>
-                <div class="display-field">
-                    @Html.DisplayFor(model => model.ProductName)
-                </div>
+                    <div class="control-group">
+                        @Html.DisplayNameFor(model => model.SupplierID)
 
-                <div class="display-label">
-                    @Html.DisplayNameFor(model => model.SupplierID)
-                </div>
-                <div class="display-field">
-                    @Html.DisplayFor(model => model.SupplierID)
-                </div>
+                        <div class="controls">
+                            @Html.DisplayFor(model => model.SupplierID)
+                        </div>
+                    </div>
 
-                <div class="display-label">
-                    @Html.DisplayNameFor(model => model.CategoryID)
-                </div>
-                <div class="display-field">
-                    @Html.DisplayFor(model => model.CategoryID)
-                </div>
+                    <div class="control-group">
+                        @Html.DisplayNameFor(model => model.CategoryID)
 
-                <div class="display-label">
-                    @Html.DisplayNameFor(model => model.QuantityPerUnit)
-                </div>
-                <div class="display-field">
-                    @Html.DisplayFor(model => model.QuantityPerUnit)
-                </div>
+                        <div class="controls">
+                            @Html.DisplayFor(model => model.CategoryID)
+                        </div>
+                    </div>
 
-                <div class="display-label">
-                    @Html.DisplayNameFor(model => model.UnitPrice)
-                </div>
-                <div class="display-field">
-                    @Html.DisplayFor(model => model.UnitPrice)
-                </div>
+                    <div class="control-group">
+                        @Html.DisplayNameFor(model => model.QuantityPerUnit)
 
-                <div class="display-label">
-                    @Html.DisplayNameFor(model => model.UnitsInStock)
-                </div>
-                <div class="display-field">
-                    @Html.DisplayFor(model => model.UnitsInStock)
-                </div>
+                        <div class="controls">
+                            @Html.DisplayFor(model => model.QuantityPerUnit)
+                        </div>
+                    </div>
 
-                <div class="display-label">
-                    @Html.DisplayNameFor(model => model.UnitsOnOrder)
-                </div>
-                <div class="display-field">
-                    @Html.DisplayFor(model => model.UnitsOnOrder)
-                </div>
+                    <div class="control-group">
+                        @Html.DisplayNameFor(model => model.UnitPrice)
 
-                <div class="display-label">
-                    @Html.DisplayNameFor(model => model.ReorderLevel)
-                </div>
-                <div class="display-field">
-                    @Html.DisplayFor(model => model.ReorderLevel)
-                </div>
+                        <div class="controls">
+                            @Html.DisplayFor(model => model.UnitPrice)
+                        </div>
+                    </div>
 
-                <div class="display-label">
-                    @Html.DisplayNameFor(model => model.Discontinued)
-                </div>
-                <div class="display-field">
-                    @Html.DisplayFor(model => model.Discontinued)
-                </div>
+                    <div class="control-group">
+                        @Html.DisplayNameFor(model => model.UnitsInStock)
 
-                <div class="display-label">
-                    @Html.DisplayNameFor(model => model.CreateTime)
-                </div>
-                <div class="display-field">
-                    @Html.DisplayFor(model => model.CreateTime)
-                </div>
-                <p>
-                    @Html.ActionLink("Edit", "Edit", new { productid=Model.ProductID }) |
-                    @Html.ActionLink("Back to List", "Index")
-                </p>
+                        <div class="controls">
+                            @Html.DisplayFor(model => model.UnitsInStock)
+                        </div>
+                    </div>
 
+                    <div class="control-group">
+                        @Html.DisplayNameFor(model => model.UnitsOnOrder)
+
+                        <div class="controls">
+                            @Html.DisplayFor(model => model.UnitsOnOrder)
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        @Html.DisplayNameFor(model => model.ReorderLevel)
+
+                        <div class="controls">
+                            @Html.DisplayFor(model => model.ReorderLevel)
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        @Html.DisplayNameFor(model => model.Discontinued)
+
+                        <div class="controls">
+                            @Html.DisplayFor(model => model.Discontinued)
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        @Html.DisplayNameFor(model => model.CreateTime)
+
+                        <div class="controls">
+                            @Html.DisplayFor(model => model.CreateTime)
+                        </div>
+                    </div>
+
+                    <p>
+                        @Html.ActionLink("Edit", "Edit", new { productid = Model.ProductID }) |
+                        @Html.ActionLink("Back to List", "Index")
+                    </p>
+
+
+                </div>
 
             </div>
 
+            <!-- END EXAMPLE TABLE PORTLET-->
+
         </div>
-
-        <!-- END EXAMPLE TABLE PORTLET-->
-
-    </div>
 
 </div>

@@ -57,15 +57,12 @@ var FormValidation = function () {
                 },
 
                 highlight: function (element) { // hightlight error inputs
-                    $(element)
-                        .closest('.help-inline').removeClass('ok'); // display OK icon
-                    $(element)
-                        .closest('.control-group').removeClass('success').addClass('error'); // set error class to the control group
+                    $(element).closest('.help-inline').removeClass('ok'); // display OK icon
+                    $(element).closest('.control-group').removeClass('success').addClass('error'); // set error class to the control group
                 },
 
                 unhighlight: function (element) { // revert the change dony by hightlight
-                    $(element)
-                        .closest('.control-group').removeClass('error'); // set error class to the control group
+                    $(element).closest('.control-group').removeClass('error'); // set error class to the control group
                 },
 
                 success: function (label) {
@@ -75,7 +72,7 @@ var FormValidation = function () {
                 },
 
                 submitHandler: function (form) {
-                    success1.show();
+                    //success1.show();
                     error1.hide();
                 }
             });
