@@ -15,6 +15,7 @@ using System.Data.Entity;
 using web.core.Mappers;
 using dal;
 using web.core.Authentication;
+using Ninject.Activation;
 
 namespace web
 {
@@ -69,13 +70,13 @@ namespace web
 
         private void AddBindings()
         {
-            _kernel.Bind<DbContext>().To<NorthwindContext>().InThreadScope();
-            _kernel.Bind(typeof(IRepository<>)).To(typeof(RepositoryBase<>));
-            _kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
             _kernel.Bind<IFormsAuthentication>().To<DefaultFormsAuthentication>();
 
+            _kernel.Bind<DbContext>().To<NorthwindContext>().InThreadScope();
+            _kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
+
+            _kernel.Bind(typeof(IRepository<>)).To(typeof(RepositoryBase<>));
             _kernel.Bind<IProductRepository>().To<ProductRepository>();
-            //_kernel.Bind<ICategoryRepository>().To<CategoryRepository>();
             _kernel.Bind<ISupplierRepository>().To<SupplierRepository>();
 
             _kernel.Bind<ICacheProvider>().To<MemoryCacheProvider>();

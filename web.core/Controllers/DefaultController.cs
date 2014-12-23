@@ -1,6 +1,10 @@
-﻿using Ninject;
+﻿using common;
+using dal;
+using model;
+using Ninject;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -11,10 +15,11 @@ using web.core.Repositories;
 namespace web.core.Controllers
 {
     [Authorize(Roles = "Admin")]
-    public class DefaultController : Controller
+    public class DefaultController : BaseController<object>
     {
         [Inject]
         private IFormsAuthentication formAuthentication { get; set; }
+
         //
         // GET: /Home/
         [Authorize(Roles = "Admin")]
@@ -65,6 +70,34 @@ namespace web.core.Controllers
         {
             formAuthentication.Signout();
             return Redirect("/");
+        }
+
+        [Inject]
+        public IRepository<test> testRepository { get; set; }
+
+        [AllowAnonymous]
+        public ActionResult test()
+        {
+            try
+            {
+                //NorthwindContext dataContext = new NorthwindContext();
+                //var s = new test() { c2 = 1 };
+                //dataContext.Set<test>().Add(s);
+                //dataContext.SaveChanges();
+
+                //return Content(s.c2.ToString());
+
+                var c = testRepository.Get(o => o.c1 == 1);
+                c.c2 += 1;
+                testRepository.Update(c);
+                unitOfWork.Commit();
+                return Content(c.c2.ToString());
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Error(ex);
+                return Content(ex.Message);
+            }
         }
     }
 }

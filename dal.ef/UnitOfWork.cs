@@ -12,7 +12,7 @@ namespace dal
     public class UnitOfWork : IUnitOfWork
     {
         [Inject]
-        protected DbContext DataContext { get; set; }
+        private DbContext DataContext { get; set; }
 
         public void Commit()
         {

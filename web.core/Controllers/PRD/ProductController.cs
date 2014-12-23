@@ -14,7 +14,7 @@ using web.core.Helper;
 
 namespace web.core.Controllers.PRD
 {
-    //[Authorize(Roles = "admin")]
+    //[Authorize(Roles = "Admin")]
     public class ProductController : BaseController<Products>
     {
         [Inject]

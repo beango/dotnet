@@ -32,6 +32,7 @@ namespace dal
         {
             dbset.Attach(entity);
             DataContext.Entry(entity).State = EntityState.Modified;
+            DataContext.SaveChanges();
         }
 
         public virtual void Delete(T entity)

@@ -1,6 +1,7 @@
 ﻿using common;
 using dal;
 using model;
+using Ninject;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

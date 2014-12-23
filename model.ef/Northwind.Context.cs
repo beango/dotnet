@@ -37,5 +37,6 @@ namespace model
         public virtual DbSet<Suppliers> Suppliers { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Territories> Territories { get; set; }
+        public virtual DbSet<test> test { get; set; }
     }
 }
