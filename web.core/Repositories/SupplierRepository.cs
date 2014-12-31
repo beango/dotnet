@@ -11,7 +11,6 @@ namespace web.core.Repositories
 {
     public class SupplierRepository: RepositoryBase<Suppliers>, ISupplierRepository
     {
-
     }
 
     public interface ISupplierRepository : IRepository<Suppliers>

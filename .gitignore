@@ -1,11 +1,9 @@
 _ReSharper.beango
 */obj/*
 */bin/*
-beango.sln.DotSettings.user
-beango.sln.docstates.suo
-beango.v12.suo
-beango.vsmdi
+*.user
+*.suo
+*.vsmdi
 TestResults
 packages
-web/ErrorLog
-beango.web_del
+*/ErrorLog

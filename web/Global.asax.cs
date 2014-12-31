@@ -73,13 +73,13 @@ namespace web
             _kernel.Bind<IFormsAuthentication>().To<DefaultFormsAuthentication>();
 
             _kernel.Bind<DbContext>().To<NorthwindContext>().InThreadScope();
-            _kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
+            _kernel.Bind<IUnitOfWork>().To<UnitOfWork>().InThreadScope();
 
-            _kernel.Bind(typeof(IRepository<>)).To(typeof(RepositoryBase<>));
-            _kernel.Bind<IProductRepository>().To<ProductRepository>();
-            _kernel.Bind<ISupplierRepository>().To<SupplierRepository>();
+            _kernel.Bind(typeof(IRepository<>)).To(typeof(RepositoryBase<>)).InThreadScope();
+            _kernel.Bind<IProductRepository>().To<ProductRepository>().InThreadScope();
+            _kernel.Bind<ISupplierRepository>().To<SupplierRepository>().InThreadScope();
 
-            _kernel.Bind<ICacheProvider>().To<MemoryCacheProvider>();
+            _kernel.Bind<ICacheProvider>().To<MemoryCacheProvider>().InThreadScope();
         }
 
         public object GetService(Type serviceType)

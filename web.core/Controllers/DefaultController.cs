@@ -80,18 +80,14 @@ namespace web.core.Controllers
         {
             try
             {
-                //NorthwindContext dataContext = new NorthwindContext();
-                //var s = new test() { c2 = 1 };
-                //dataContext.Set<test>().Add(s);
-                //dataContext.SaveChanges();
-
-                //return Content(s.c2.ToString());
-
-                var c = testRepository.Get(o => o.c1 == 1);
-                c.c2 += 1;
-                testRepository.Update(c);
+                var s = new test() { c2 = 1 };
+                testRepository.Add(s);
                 unitOfWork.Commit();
-                return Content(c.c2.ToString());
+
+                s.c2++;
+                testRepository.Update(s);
+                unitOfWork.Commit();
+                return Content(s.c1.ToString());
             }
             catch (Exception ex)
             {
