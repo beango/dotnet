@@ -37,6 +37,7 @@ namespace dal
 
         public virtual void Delete(T entity)
         {
+            dbset.Attach(entity);
             dbset.Remove(entity);
         }
 

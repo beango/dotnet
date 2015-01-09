@@ -18,6 +18,7 @@ namespace model
         public NorthwindContext()
             : base("name=NorthwindContext")
         {
+            this.Configuration.LazyLoadingEnabled = false; 
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

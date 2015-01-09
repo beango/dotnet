@@ -55,6 +55,8 @@ namespace web.core.Controllers.PRD
         public ActionResult Details(long productid)
         {
             var product = productRepository.GetById(productid);
+            if (null != product.CategoryID)
+            product.Categories = categoryRepository.GetById(product.CategoryID.Value);
             var productModel = Mapper.Map<ProductsModel>(product);
             return View(productModel);
         }
@@ -113,10 +115,17 @@ namespace web.core.Controllers.PRD
             return RedirectToAction("Index");
         }
 
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="productid"></param>
+        /// <returns></returns>
         public ActionResult Delete(int productid)
         {
             productRepository.Delete(model => model.ProductID == productid);
-
+            //productRepository.Delete(new model.Products() { ProductID = productid });
+            unitOfWork.Commit();
+            return null;
             return RedirectToAction("Index");
         }
     }

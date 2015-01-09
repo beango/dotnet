@@ -11,13 +11,13 @@
     <meta content="" name="author" />
     <title>@ViewBag.Title</title>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    @Html.StyleSheet("matrix-admin/css/bootstrap.min.css")
+    @*@Html.StyleSheet("matrix-admin/css/bootstrap.min.css")
     @Html.StyleSheet("matrix-admin/css/bootstrap-responsive.min.css")
     @Html.StyleSheet("matrix-admin/css/fullcalendar.css")
     @Html.StyleSheet("matrix-admin/css/matrix-style.css")
     @Html.StyleSheet("matrix-admin/css/matrix-media.css")
     @Html.StyleSheet("matrix-admin/font-awesome/css/font-awesome.css")
-    @Html.StyleSheet("matrix-admin/css/jquery.gritter.css")
+    @Html.StyleSheet("matrix-admin/css/jquery.gritter.css")*@
     <!-- END GLOBAL MANDATORY STYLES -->
     @RenderSection("Head", false)
 </head>
@@ -50,27 +50,7 @@
     </div>
 
     <!--end-Footer-part-->
-    @Html.JavaScript("matrix-admin/js/excanvas.min.js")
-    @Html.JavaScript("matrix-admin/js/jquery.min.js")
-    @Html.JavaScript("matrix-admin/js/jquery.ui.custom.js")
-    @Html.JavaScript("matrix-admin/js/bootstrap.min.js")
-    @Html.JavaScript("matrix-admin/js/jquery.flot.min.js")
-    @Html.JavaScript("matrix-admin/js/jquery.flot.resize.min.js")
-    @Html.JavaScript("matrix-admin/js/jquery.peity.min.js")
-    @Html.JavaScript("matrix-admin/js/fullcalendar.min.js")
-    @Html.JavaScript("matrix-admin/js/matrix.js")
-    @Html.JavaScript("matrix-admin/js/matrix.dashboard.js")
-    @Html.JavaScript("matrix-admin/js/jquery.gritter.min.js")
-    @Html.JavaScript("matrix-admin/js/matrix.interface.js")
-    @Html.JavaScript("matrix-admin/js/matrix.chat.js")
-    @Html.JavaScript("matrix-admin/js/jquery.validate.js")
-    @Html.JavaScript("matrix-admin/js/matrix.form_validation.js")
-    @Html.JavaScript("matrix-admin/js/jquery.wizard.js")
-    @Html.JavaScript("matrix-admin/js/jquery.uniform.js")
-    @Html.JavaScript("matrix-admin/js/select2.min.js")
-    @Html.JavaScript("matrix-admin/js/matrix.popover.js")
-    @Html.JavaScript("matrix-admin/js/jquery.dataTables.min.js")
-    @Html.JavaScript("matrix-admin/js/matrix.tables.js") 
+    @Html.JavaScript("jquery/jquery.min.js")
     @RenderSection("Script", false)
 </body>
 </html>
