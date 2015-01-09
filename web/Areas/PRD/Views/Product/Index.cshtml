@@ -4,94 +4,234 @@
     ViewBag.Title = "Products";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<!-- #section:basics/content.breadcrumbs -->
+<div class="breadcrumbs" id="breadcrumbs">
+    <script type="text/javascript">
+        try { ace.settings.check('breadcrumbs', 'fixed') } catch (e) { }
+    </script>
 
-<div class="row-fluid">
-    <div class="span12">
-        <!-- BEGIN EXAMPLE TABLE PORTLET-->
-        <div class="widget-box">
-            <div class="widget-title">
-                <span class="icon"> <i class="icon-th"></i> </span>
-                <a href="/PRD/Product/Create" class="btn blue">Create</a><span class="label label-info">Featured</span>
-            </div>
-            <div class="widget-content ">
-                <table class="table table-bordered table-striped with-check">
-                    <thead>
-                        <tr>
-                            <th><input type="checkbox" id="title-table-checkbox" name="title-table-checkbox" /></th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.ProductID)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.ProductName)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.SupplierID)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.CategoryID)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.QuantityPerUnit)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.ReorderLevel)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.Discontinued)
-                            </th>
-                            <th>
+    <ul class="breadcrumb">
+        <li>
+            <i class="ace-icon fa fa-home home-icon"></i>
+            <a href="#">Home</a>
+        </li>
 
-                            </th>
-                            <th>
-
-                            </th>
-                            <th>
-
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
-                            <tr class="odd gradeX">
-                                <td><input type="checkbox" class="checkboxes" value="1" /></td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.ProductID)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.ProductName)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Suppliers.CompanyName)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Categories.CategoryName)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.QuantityPerUnit)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.ReorderLevel)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Discontinued)
-                                </td>
-                                <td>
-                                    @Html.ActionLink("Details", "Details", new { productid = item.ProductID }, new { @class = "details" })
-                                </td>
-                                <td>
-                                    @Html.ActionLink("Edit", "Edit", new { productid = item.ProductID }, new { @class = "edit" })
-                                </td>
-                                <td>@Html.ActionLink("Delete", "Delete", new { productid = item.ProductID }, new { @class = "delete" })</td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <!-- END EXAMPLE TABLE PORTLET-->
-    </div>
+        <li>
+            <a href="#">Tables</a>
+        </li>
+        <li class="active">Simple &amp; Dynamic</li>
+    </ul><!-- /.breadcrumb -->
+    <!-- #section:basics/content.searchbox -->
+    <div class="nav-search" id="nav-search">
+        <form class="form-search">
+            <span class="input-icon">
+                <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+                <i class="ace-icon fa fa-search nav-search-icon"></i>
+            </span>
+        </form>
+    </div><!-- /.nav-search -->
+    <!-- /section:basics/content.searchbox -->
 </div>
+
+<!-- /section:basics/content.breadcrumbs -->
+<div class="page-content">
+    <!-- #section:settings.box -->
+    <div class="ace-settings-container" id="ace-settings-container">
+        <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+            <i class="ace-icon fa fa-cog bigger-150"></i>
+        </div>
+
+        <div class="ace-settings-box clearfix" id="ace-settings-box">
+            <div class="pull-left width-50">
+                <!-- #section:settings.skins -->
+                <div class="ace-settings-item">
+                    <div class="pull-left">
+                        <select id="skin-colorpicker" class="hide">
+                            <option data-skin="no-skin" value="#438EB9">#438EB9</option>
+                            <option data-skin="skin-1" value="#222A2D">#222A2D</option>
+                            <option data-skin="skin-2" value="#C6487E">#C6487E</option>
+                            <option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+                        </select>
+                    </div>
+                    <span>&nbsp; Choose Skin</span>
+                </div>
+
+                <!-- /section:settings.skins -->
+                <!-- #section:settings.navbar -->
+                <div class="ace-settings-item">
+                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar" />
+                    <label class="lbl" for="ace-settings-navbar"> Fixed Navbar</label>
+                </div>
+
+                <!-- /section:settings.navbar -->
+                <!-- #section:settings.sidebar -->
+                <div class="ace-settings-item">
+                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-sidebar" />
+                    <label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
+                </div>
+
+                <!-- /section:settings.sidebar -->
+                <!-- #section:settings.breadcrumbs -->
+                <div class="ace-settings-item">
+                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs" />
+                    <label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>
+                </div>
+
+                <!-- /section:settings.breadcrumbs -->
+                <!-- #section:settings.rtl -->
+                <div class="ace-settings-item">
+                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" />
+                    <label class="lbl" for="ace-settings-rtl"> Right To Left (rtl)</label>
+                </div>
+
+                <!-- /section:settings.rtl -->
+                <!-- #section:settings.container -->
+                <div class="ace-settings-item">
+                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-add-container" />
+                    <label class="lbl" for="ace-settings-add-container">
+                        Inside
+                        <b>.container</b>
+                    </label>
+                </div>
+
+                <!-- /section:settings.container -->
+            </div><!-- /.pull-left -->
+
+            <div class="pull-left width-50">
+                <!-- #section:basics/sidebar.options -->
+                <div class="ace-settings-item">
+                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover" />
+                    <label class="lbl" for="ace-settings-hover"> Submenu on Hover</label>
+                </div>
+
+                <div class="ace-settings-item">
+                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact" />
+                    <label class="lbl" for="ace-settings-compact"> Compact Sidebar</label>
+                </div>
+
+                <div class="ace-settings-item">
+                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight" />
+                    <label class="lbl" for="ace-settings-highlight"> Alt. Active Item</label>
+                </div>
+
+                <!-- /section:basics/sidebar.options -->
+            </div><!-- /.pull-left -->
+        </div><!-- /.ace-settings-box -->
+    </div><!-- /.ace-settings-container -->
+    <!-- /section:settings.box -->
+    <div class="page-content-area">
+        <div class="page-header">
+            <h1>
+                Tables
+                <small>
+                    <i class="ace-icon fa fa-angle-double-right"></i>
+                    Static &amp; Dynamic Tables
+                </small>
+            </h1>
+        </div><!-- /.page-header -->
+
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- PAGE CONTENT BEGINS -->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <table id="sample-table-1" class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="center">
+                                        <label class="position-relative">
+                                            <input type="checkbox" class="ace" />
+                                            <span class="lbl"></span>
+                                        </label>
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ProductID)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ProductName)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.SupplierID)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.CategoryID)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.QuantityPerUnit)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ReorderLevel)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Discontinued)
+                                    </th>
+                                    <th>
+
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td class="center">
+                                            <label class="position-relative">
+                                                <input type="checkbox" class="ace" />
+                                                <span class="lbl"></span>
+                                            </label>
+                                        </td>
+
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ProductID)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ProductName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Suppliers.CompanyName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Categories.CategoryName)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.QuantityPerUnit)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ReorderLevel)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Discontinued)
+                                        </td>
+
+                                        <td>
+                                            <div class="hidden-sm hidden-xs action-buttons">
+                                                <a class="blue" href="/PRD/Product/Details?productid=@item.ProductID">
+                                                    <i class="ace-icon fa fa-search-plus bigger-130"></i>
+                                                </a>
+
+                                                <a class="green" href="/PRD/Product/Edit?productid=@item.ProductID">
+                                                    <i class="ace-icon fa fa-pencil bigger-130"></i>
+                                                </a>
+
+                                                <a class="red" href="/PRD/Product/Delete?productid=@item.ProductID">
+                                                    <i class="ace-icon fa fa-trash-o bigger-130"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div><!-- /.span -->
+                </div><!-- /.row -->
+
+                <div class="hr hr-18 dotted hr-double"></div>
+                <!-- PAGE CONTENT ENDS -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.page-content-area -->
+</div><!-- /.page-content -->
 
 @section Script{
     <script type="text/javascript">

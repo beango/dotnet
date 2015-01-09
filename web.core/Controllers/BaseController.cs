@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using web.core.Authentication;
 
 namespace web.core.Controllers
 {
@@ -20,5 +21,16 @@ namespace web.core.Controllers
     {
         [Inject]
         public IUnitOfWork unitOfWork { get; set; }
+
+        /// <summary>
+        /// 客户资料
+        /// </summary>
+        public UserModel UserModel
+        {
+            get
+            {
+                return User.Identity as UserModel;
+            }
+        }
     }
 }

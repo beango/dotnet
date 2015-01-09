@@ -122,10 +122,8 @@ namespace web.core.Controllers.PRD
         /// <returns></returns>
         public ActionResult Delete(int productid)
         {
-            productRepository.Delete(model => model.ProductID == productid);
-            //productRepository.Delete(new model.Products() { ProductID = productid });
+            productRepository.Delete(new model.Products() { ProductID = productid });
             unitOfWork.Commit();
-            return null;
             return RedirectToAction("Index");
         }
     }

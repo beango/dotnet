@@ -51,7 +51,7 @@ namespace web.core.Extensions
         {
             var urlHelper = new UrlHelper(html.ViewContext.RequestContext);
             return StyleSheetForFullPath(html,
-                urlHelper.Content(BaseRootPath + "content/" + fileName));
+                urlHelper.Content(BaseRootPath + fileName));
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace web.core.Extensions
         {
             var urlHelper = new UrlHelper(html.ViewContext.RequestContext);
             return JavaScriptForFullPath(html,
-                urlHelper.Content(BaseRootPath + "content/" + fileName));
+                urlHelper.Content(BaseRootPath + fileName));
         }
 
 
